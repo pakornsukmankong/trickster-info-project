@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // สคริปต์ตัดไอคอน เป็น Node script แยกต่างหาก ไม่ใช่โค้ดของเว็บ
+    "tools/**",
   ]),
 ]);
 

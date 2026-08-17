@@ -1,4 +1,4 @@
-# Trickster Adventure — คู่มือเควส Trickster Online (ภาษาไทย)
+# Trickster Info — คู่มือเกม Trickster Online (ภาษาไทย)
 
 เว็บคู่มือเดินเควส Trickster Online เรียบเรียงจากอัลบั้มภาพของเพจ **Trickster Adventure**
 บน Facebook ตอนนี้มีข้อมูลครบของ **Episode 0** และ **Episode 1** แล้ว
@@ -6,38 +6,33 @@
 ## รันโปรเจกต์
 
 ```bash
-npm --prefix web install
+npm install
 ```
 
 ```bash
-npm --prefix web run dev
+npm run dev
 ```
 
 เปิด http://localhost:3000
 
 ```bash
-npm --prefix web run build
+npm run build
 ```
 
 ## Deploy ขึ้น Vercel
 
-โค้ด Next.js อยู่ในโฟลเดอร์ `web/` ไม่ได้อยู่ราก repo ตอนสร้างโปรเจกต์บน Vercel
-จึงต้องตั้ง **Root Directory = `web`** ไม่งั้น Vercel จะหา `package.json` ที่มี `next` ไม่เจอ
-และตรวจ framework ไม่ออก นอกนั้นเป็นค่า default ทั้งหมด (Build `next build`, Install `npm install`)
-
-ผ่าน dashboard: New Project → เลือก repo → Root Directory กด Edit → เลือก `web` → Deploy
+แอป Next.js อยู่ที่รากrepo แล้ว Vercel ตรวจเจอเอง **ไม่ต้องตั้งค่าอะไรเลย**
+New Project → เลือก repo → Deploy จบ
 
 หรือผ่าน CLI
 
 ```bash
-npx vercel link --yes
+npx vercel --prod
 ```
-
-แล้วแก้ Root Directory ในหน้า Project Settings → Build & Deployment ก่อนสั่ง `npx vercel --prod`
 
 ### ตัวแปรแวดล้อม
 
-ไม่ต้องตั้งอะไรก็ deploy ได้ — `web/src/lib/site.ts` จะอ่าน `VERCEL_PROJECT_PRODUCTION_URL`
+ไม่ต้องตั้งอะไรก็ deploy ได้ — `src/lib/site.ts` จะอ่าน `VERCEL_PROJECT_PRODUCTION_URL`
 ที่ Vercel ใส่ให้เองมาใช้เป็น URL ใน `sitemap.xml`, `robots.txt` และ Open Graph
 
 เมื่อผูกโดเมนจริงแล้วค่อยตั้ง `NEXT_PUBLIC_SITE_URL` เป็นโดเมนนั้น (เช่น `https://trickster.info`)
@@ -45,9 +40,9 @@ npx vercel link --yes
 
 ### SEO / การแชร์ลิงก์
 
-- `web/src/app/sitemap.ts` — สร้าง `sitemap.xml` จากรายการตอนอัตโนมัติ เพิ่มตอนใหม่แล้วไม่ต้องแก้
-- `web/src/app/robots.ts` — `robots.txt` พร้อมลิงก์ sitemap
-- `web/src/app/opengraph-image.png` — ภาพพรีวิว 1200×630 ตอนแชร์ลิงก์
+- `src/app/sitemap.ts` — สร้าง `sitemap.xml` จากรายการตอนอัตโนมัติ เพิ่มตอนใหม่แล้วไม่ต้องแก้
+- `src/app/robots.ts` — `robots.txt` พร้อมลิงก์ sitemap
+- `src/app/opengraph-image.png` — ภาพพรีวิว 1200×630 ตอนแชร์ลิงก์
 
 ## หน้าในเว็บ
 
@@ -70,10 +65,12 @@ npx vercel link --yes
 ## โครงสร้างโค้ด
 
 ```
-web/src/
+src/
   app/
     [episode]/[chapter]/   หน้าเควสของแต่ละบท (static ทุกตอน)
     items/  monsters/      หน้าอ้างอิง
+    icon.png  apple-icon.png  opengraph-image.png
+    sitemap.ts  robots.ts
   components/              การ์ดเควส, แถบความคืบหน้า, lightbox, header/footer
   data/
     types.ts               โครงสร้างข้อมูลกลาง (Episode / Chapter / QuestStep / Item / Monster)
@@ -81,21 +78,23 @@ web/src/
     episodes.ts            รวมทุกตอน + helper (getEpisode / getChapter / stepIds)
     items.ts  monsters.ts  ข้อมูลอ้างอิง แยก ep0/ep1 แล้ว export รวม
     icons.ts               จับคู่ชื่อ -> ไฟล์ไอคอน
-web/public/
+  lib/                     useProgress (localStorage), site (URL ของเว็บ)
+public/
+  brand/                   โลโก้ต้นฉบับ
   images/ep0/ ep1/         ภาพต้นฉบับจากอัลบั้ม ตอนละ 24 รูป
   icons/items/             ไอคอนไอเทม 88 ชิ้น
   icons/monsters/          สไปรต์มอนสเตอร์ 14 ตัว
   icons/npcs/              ภาพ NPC 31 ตัว
-tools/                     สคริปต์ตัดไอคอนออกจากภาพต้นฉบับ
+tools/                     สคริปต์ตัดไอคอน (มี package.json แยก ไม่เกี่ยวกับ build ของเว็บ)
 ```
 
 ## เพิ่มตอนใหม่
 
-1. วางภาพต้นฉบับไว้ที่ `web/public/images/<slug>/`
-2. สร้างไฟล์ข้อมูลตามแบบของ `web/src/data/ep1.ts` (ใช้ type `Episode` เดิม)
-3. เพิ่มเข้า array `episodes` ใน `web/src/data/episodes.ts`
+1. วางภาพต้นฉบับไว้ที่ `public/images/<slug>/`
+2. สร้างไฟล์ข้อมูลตามแบบของ `src/data/ep1.ts` (ใช้ type `Episode` เดิม)
+3. เพิ่มเข้า array `episodes` ใน `src/data/episodes.ts`
 4. เพิ่มไอเทม/มอนใน `items.ts` และ `monsters.ts` (อย่าลืมใส่ `episode`)
-5. route `/[episode]/[chapter]` จะสร้างหน้าใหม่ให้เอง
+5. route `/[episode]/[chapter]` กับ `sitemap.xml` จะอัปเดตให้เอง
 
 ## ตัดไอคอน (tools/)
 
@@ -110,7 +109,7 @@ node tools/extract-icons.mjs <โฟลเดอร์ภาพต้นฉบ�
 ปรับความไวด้วย env `MIN_COLOR_RATIO` และจำกัดไฟล์ด้วย `ONLY`
 
 ```bash
-node tools/build-assets.mjs ep1 <crops> <crops2> web/public <โฟลเดอร์ภาพต้นฉบับ>
+node tools/build-assets.mjs ep1 <crops> <crops2> public <โฟลเดอร์ภาพต้นฉบับ>
 ```
 
 `build-assets.mjs` อ่าน manifest จาก `tools/manifests/<ตอน>.mjs` ที่จับคู่ candidate กับชื่อจริง
@@ -119,19 +118,19 @@ node tools/build-assets.mjs ep1 <crops> <crops2> web/public <โฟลเดอ�
 
 ## ไอคอนเว็บ (favicon)
 
-โลโก้ต้นฉบับอยู่ที่ `web/public/brand/trickster-info-logo.png` (1933×813)
+โลโก้ต้นฉบับอยู่ที่ `public/brand/trickster-info-logo.png` (1933×813)
 รูปเป็นแนวนอนยาว ย่อลงช่องไอคอนแล้วอ่านไม่ออก จึงตัดเฉพาะแมวมาสคอตด้านขวามาใช้
 
 ```bash
-node tools/make-icons.mjs web/public/brand/trickster-info-logo.png web/src/app
+node tools/make-icons.mjs public/brand/trickster-info-logo.png src/app
 ```
 
 สคริปต์จะคีย์พื้นหลังฟ้าออกให้เหลือเงาแมวโปร่งใส (ใช้ morphological opening กัดเส้นตัวอักษร
 ที่ติดมาในกรอบออก แล้วเก็บเฉพาะก้อนที่ใหญ่ที่สุด) แล้ววางบนพื้นไล่สีโทนเดียวกับโลโก้
-ได้ผลเป็น `web/src/app/icon.png` (512), `apple-icon.png` (180) และ `opengraph-image.png` (1200×630)
+ได้ผลเป็น `src/app/icon.png` (512), `apple-icon.png` (180) และ `opengraph-image.png` (1200×630)
 ซึ่ง Next.js หยิบไปใส่ `<head>` เอง
 
-ดูว่าย่อแล้วยังอ่านออกไหมด้วย `node tools/preview-icon.mjs web/src/app/icon.png out.png`
+ดูว่าย่อแล้วยังอ่านออกไหมด้วย `node tools/preview-icon.mjs src/app/icon.png out.png`
 
 เครื่องมือช่วยอื่น ๆ
 
@@ -139,7 +138,7 @@ node tools/make-icons.mjs web/public/brand/trickster-info-logo.png web/src/app
 - `zoom.mjs` — ขยายบางส่วนของภาพเพื่ออ่านตัวเลขในตารางสเตตัสให้ชัด
 - `verify-assets.mjs` — ทำ contact sheet ของไอคอนที่ตั้งชื่อแล้ว ไว้ตรวจว่าจับคู่ถูก
 
-เวลาเพิ่มไอคอนใหม่ อย่าลืมเพิ่มคีย์ใน `web/src/data/icons.ts` ด้วย
+เวลาเพิ่มไอคอนใหม่ อย่าลืมเพิ่มคีย์ใน `src/data/icons.ts` ด้วย
 ตัวจับคู่ใช้กติกา "คีย์ที่ยาวที่สุดที่อยู่ในชื่อนั้นชนะ" (เช่น `Golden Mole Feather` ชนะ `Golden Mole`)
 
 ## ที่มาของข้อมูล
