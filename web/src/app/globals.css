@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff8ef;
+  --foreground: #3a2a1f;
+
+  --sand-50: #fffaf2;
+  --sand-100: #fdf0dd;
+  --sand-200: #f7dfbe;
+  --sand-300: #eec894;
+
+  --coral-400: #ff8f6b;
+  --coral-500: #f96a45;
+  --coral-600: #dd4d2b;
+
+  --sea-300: #7fd6e8;
+  --sea-500: #21a7c4;
+  --sea-700: #12708a;
+
+  --leaf-500: #4fae62;
+  --sun-400: #ffc247;
+  --grape-500: #8b6ad6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-sand-50: var(--sand-50);
+  --color-sand-100: var(--sand-100);
+  --color-sand-200: var(--sand-200);
+  --color-sand-300: var(--sand-300);
+
+  --color-coral-400: var(--coral-400);
+  --color-coral-500: var(--coral-500);
+  --color-coral-600: var(--coral-600);
+
+  --color-sea-300: var(--sea-300);
+  --color-sea-500: var(--sea-500);
+  --color-sea-700: var(--sea-700);
+
+  --color-leaf-500: var(--leaf-500);
+  --color-sun-400: var(--sun-400);
+  --color-grape-500: var(--grape-500);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 12% -10%, #d7f3fb 0%, transparent 60%),
+    radial-gradient(900px 500px at 92% 0%, #ffe6cf 0%, transparent 55%),
+    var(--background);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--font-display), var(--font-body), system-ui, sans-serif;
+}
+
+/* แถบเลื่อนของตารางกว้าง ๆ */
+.scroll-x {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
