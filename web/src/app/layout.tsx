@@ -3,6 +3,7 @@ import { Kanit, Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { siteDescription, siteName, siteUrl } from "@/lib/site";
 
 const display = Kanit({
   variable: "--font-display",
@@ -17,12 +18,35 @@ const body = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Trickster Info คู่มือเกม Trickster Online",
     template: "%s | Trickster Info",
   },
-  description:
-    "คู่มือเกม Trickster Online ภาษาไทย เดินเควสสายหลัก Episode 0 และ Episode 1 แบบทีละขั้น พร้อมข้อมูลไอเทม มอนสเตอร์ NPC และรางวัลครบทุกขั้นตอน",
+  description: siteDescription,
+  applicationName: siteName,
+  keywords: [
+    "Trickster Online",
+    "คู่มือ Trickster",
+    "เควส Trickster",
+    "Trickster Info",
+    "Caballa Relics",
+    "Oops Wharf",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName,
+    locale: "th_TH",
+    url: "/",
+    title: "Trickster Info คู่มือเกม Trickster Online",
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trickster Info คู่มือเกม Trickster Online",
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

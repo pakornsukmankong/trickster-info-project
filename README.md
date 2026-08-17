@@ -19,6 +19,36 @@ npm --prefix web run dev
 npm --prefix web run build
 ```
 
+## Deploy ขึ้น Vercel
+
+โค้ด Next.js อยู่ในโฟลเดอร์ `web/` ไม่ได้อยู่ราก repo ตอนสร้างโปรเจกต์บน Vercel
+จึงต้องตั้ง **Root Directory = `web`** ไม่งั้น Vercel จะหา `package.json` ที่มี `next` ไม่เจอ
+และตรวจ framework ไม่ออก นอกนั้นเป็นค่า default ทั้งหมด (Build `next build`, Install `npm install`)
+
+ผ่าน dashboard: New Project → เลือก repo → Root Directory กด Edit → เลือก `web` → Deploy
+
+หรือผ่าน CLI
+
+```bash
+npx vercel link --yes
+```
+
+แล้วแก้ Root Directory ในหน้า Project Settings → Build & Deployment ก่อนสั่ง `npx vercel --prod`
+
+### ตัวแปรแวดล้อม
+
+ไม่ต้องตั้งอะไรก็ deploy ได้ — `web/src/lib/site.ts` จะอ่าน `VERCEL_PROJECT_PRODUCTION_URL`
+ที่ Vercel ใส่ให้เองมาใช้เป็น URL ใน `sitemap.xml`, `robots.txt` และ Open Graph
+
+เมื่อผูกโดเมนจริงแล้วค่อยตั้ง `NEXT_PUBLIC_SITE_URL` เป็นโดเมนนั้น (เช่น `https://trickster.info`)
+ค่านี้จะทับค่าของ Vercel
+
+### SEO / การแชร์ลิงก์
+
+- `web/src/app/sitemap.ts` — สร้าง `sitemap.xml` จากรายการตอนอัตโนมัติ เพิ่มตอนใหม่แล้วไม่ต้องแก้
+- `web/src/app/robots.ts` — `robots.txt` พร้อมลิงก์ sitemap
+- `web/src/app/opengraph-image.png` — ภาพพรีวิว 1200×630 ตอนแชร์ลิงก์
+
 ## หน้าในเว็บ
 
 | เส้นทาง | เนื้อหา |
@@ -98,7 +128,8 @@ node tools/make-icons.mjs web/public/brand/trickster-info-logo.png web/src/app
 
 สคริปต์จะคีย์พื้นหลังฟ้าออกให้เหลือเงาแมวโปร่งใส (ใช้ morphological opening กัดเส้นตัวอักษร
 ที่ติดมาในกรอบออก แล้วเก็บเฉพาะก้อนที่ใหญ่ที่สุด) แล้ววางบนพื้นไล่สีโทนเดียวกับโลโก้
-ได้ผลเป็น `web/src/app/icon.png` (512) กับ `apple-icon.png` (180) ซึ่ง Next.js หยิบไปใส่ `<head>` เอง
+ได้ผลเป็น `web/src/app/icon.png` (512), `apple-icon.png` (180) และ `opengraph-image.png` (1200×630)
+ซึ่ง Next.js หยิบไปใส่ `<head>` เอง
 
 ดูว่าย่อแล้วยังอ่านออกไหมด้วย `node tools/preview-icon.mjs web/src/app/icon.png out.png`
 

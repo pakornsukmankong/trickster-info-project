@@ -170,9 +170,43 @@ async function render(cat, size, outFile) {
   return { size, catW: meta.width, catH: meta.height };
 }
 
+/** ภาพพรีวิวตอนแชร์ลิงก์ 1200x630 — ใช้โลโก้เต็มวางบนพื้นไล่สีเดียวกัน */
+async function renderOgImage(outFile) {
+  const W = 1200;
+  const H = 630;
+
+  // ใช้ตัวโลโก้เองขยายเต็มกรอบแล้วเบลอเป็นพื้นหลัง สีจะกลืนกับโลโก้พอดีไม่เห็นรอยต่อ
+  const bg = await sharp(LOGO)
+    .resize(W, H, { fit: "cover", position: "center" })
+    .blur(38)
+    .modulate({ brightness: 1.04 })
+    .png()
+    .toBuffer();
+
+  const logo = await sharp(LOGO)
+    .resize({ width: Math.round(W * 0.86), fit: "inside", kernel: "lanczos3" })
+    .png()
+    .toBuffer();
+  const meta = await sharp(logo).metadata();
+
+  await sharp(bg)
+    .composite([
+      {
+        input: logo,
+        left: Math.round((W - meta.width) / 2),
+        top: Math.round((H - meta.height) / 2),
+      },
+    ])
+    .png()
+    .toFile(outFile);
+
+  return { og: `${W}x${H}`, logoW: meta.width, logoH: meta.height };
+}
+
 const cat = await cutoutCat();
 const results = [
   await render(cat, 512, path.join(APP_DIR, "icon.png")),
   await render(cat, 180, path.join(APP_DIR, "apple-icon.png")),
+  await renderOgImage(path.join(APP_DIR, "opengraph-image.png")),
 ];
 console.log(JSON.stringify(results));
