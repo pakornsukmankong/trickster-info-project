@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getChapter, readyEpisodes } from "@/data/episodes";
+import { episodeLabel, getChapter, readyEpisodes } from "@/data/episodes";
 import QuestStepCard from "@/components/QuestStepCard";
 import ProgressBar from "@/components/ProgressBar";
 
@@ -18,7 +18,7 @@ export async function generateMetadata(
   const found = getChapter(episode, chapter);
   if (!found) return { title: "ไม่พบบทนี้" };
   return {
-    title: `EP${found.episode.number} บทที่ ${found.chapter.number} — ${found.chapter.title}`,
+    title: `${episodeLabel[found.episode.slug]} บทที่ ${found.chapter.number} — ${found.chapter.title}`,
     description: found.chapter.intro,
   };
 }
@@ -44,7 +44,7 @@ export default async function ChapterPage(
         </Link>
         <span className="mx-1.5">/</span>
         <Link href={`/${ep.slug}`} className="hover:text-coral-500">
-          Episode {ep.number}
+          {episodeLabel[ep.slug]}
         </Link>
         <span className="mx-1.5">/</span>
         <span className="text-[#5b4638]">บทที่ {c.number}</span>
@@ -52,7 +52,7 @@ export default async function ChapterPage(
 
       <header className="mt-4 rounded-3xl border border-sand-200 bg-white/85 p-7 shadow-sm">
         <span className="inline-block rounded-full bg-sand-200 px-3 py-0.5 text-[12px] font-600 text-[#7a5327]">
-          EP {ep.number} · Chapter {c.number}
+          {episodeLabel[ep.slug]} · Chapter {c.number}
         </span>
         <h1 className="mt-3 font-display text-3xl font-700 text-[#2f2119]">
           {c.title}
@@ -97,7 +97,7 @@ export default async function ChapterPage(
             href={`/${ep.slug}`}
             className="rounded-xl border border-sand-300 bg-white px-4 py-2.5 text-sm text-sea-700 transition hover:bg-sand-100"
           >
-            ← กลับหน้า Episode {ep.number}
+            ← กลับหน้า {episodeLabel[ep.slug]}
           </Link>
         )}
         {next && (

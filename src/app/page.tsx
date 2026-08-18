@@ -1,10 +1,24 @@
 import Link from "next/link";
-import { episodes, readyEpisodes, stepCount } from "@/data/episodes";
+import { episodeLabel, guidesInGroup, readyEpisodes, stepCount } from "@/data/episodes";
+import type { GuideGroup } from "@/data/types";
 import { allMonsters } from "@/data/monsters";
 import { allItems } from "@/data/items";
 
 const totalSteps = readyEpisodes.reduce((n, e) => n + stepCount(e), 0);
 const totalChapters = readyEpisodes.reduce((n, e) => n + e.chapters.length, 0);
+
+const GROUPS: { key: GuideGroup; heading: string; blurb: string }[] = [
+  {
+    key: "ep",
+    heading: "เควสเนื้อเรื่อง (EP)",
+    blurb: "สายหลักของเกม เดินตามเนื้อเรื่องไปทีละเมือง",
+  },
+  {
+    key: "part",
+    heading: "เควส Sticker (Part)",
+    blurb: "เควสสะสมสติกเกอร์ เน้นส่งของ ทำหลังจากผ่านเควสเนื้อเรื่องของเมืองนั้นแล้ว",
+  },
+];
 
 export default function Home() {
   return (
@@ -31,10 +45,10 @@ export default function Home() {
             เริ่มอ่าน Episode 0 →
           </Link>
           <Link
-            href="/ep1"
+            href="/part-1"
             className="rounded-xl border border-sand-300 bg-white px-5 py-2.5 font-display text-sm font-600 text-sea-700 transition hover:bg-sand-100"
           >
-            ข้ามไป Episode 1 (Lv.45)
+            ดูเควส Sticker Part 1 (Lv.25)
           </Link>
         </div>
 
@@ -59,19 +73,31 @@ export default function Home() {
         </dl>
       </section>
 
-      <section className="mt-12">
-        <h2 className="font-display text-2xl font-700 text-[#2f2119]">เลือกตอน</h2>
-        <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          {episodes.map((ep) =>
-            ep.status === "ready" ? (
+      {GROUPS.map((g) => (
+        <section key={g.key} className="mt-12">
+          <h2 className="font-display text-2xl font-700 text-[#2f2119]">{g.heading}</h2>
+          <p className="mt-1 text-[14px] text-[#5b4638]">{g.blurb}</p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            {guidesInGroup(g.key).map((ep) => (
               <Link
                 key={ep.slug}
                 href={`/${ep.slug}`}
                 className="group rounded-2xl border border-sand-200 bg-white/85 p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-coral-400 hover:shadow-md"
               >
-                <span className="inline-block rounded-full bg-coral-500 px-2.5 py-0.5 text-[11px] font-600 text-white">
-                  EP {ep.number}
-                </span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span
+                    className={`inline-block rounded-full px-2.5 py-0.5 text-[11px] font-600 text-white ${
+                      g.key === "part" ? "bg-grape-500" : "bg-coral-500"
+                    }`}
+                  >
+                    {episodeLabel[ep.slug]}
+                  </span>
+                  {ep.levelHint && (
+                    <span className="rounded-full bg-sand-200 px-2.5 py-0.5 text-[11px] font-600 text-[#7a5327]">
+                      {ep.levelHint}
+                    </span>
+                  )}
+                </div>
                 <h3 className="mt-3 font-display text-xl font-600 text-[#2f2119] group-hover:text-coral-600">
                   {ep.title}
                 </h3>
@@ -83,23 +109,10 @@ export default function Home() {
                   โซน: {ep.areas.join(" · ")}
                 </p>
               </Link>
-            ) : (
-              <div
-                key={ep.slug}
-                className="rounded-2xl border border-dashed border-sand-300 bg-sand-50/60 p-5"
-              >
-                <span className="inline-block rounded-full bg-sand-300 px-2.5 py-0.5 text-[11px] font-600 text-[#7a5327]">
-                  EP {ep.number}
-                </span>
-                <h3 className="mt-3 font-display text-xl font-600 text-[#8a7565]">
-                  {ep.title}
-                </h3>
-                <p className="mt-2 text-[14px] text-[#8a7565]">{ep.tagline}</p>
-              </div>
-            )
-          )}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
+      ))}
 
       <section className="mt-12 grid gap-4 sm:grid-cols-2">
         <Link

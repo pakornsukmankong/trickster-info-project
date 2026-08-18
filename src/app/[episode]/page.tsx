@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getEpisode, readyEpisodes, stepCount, stepIds } from "@/data/episodes";
+import { episodeLabel, getEpisode, readyEpisodes, stepCount, stepIds } from "@/data/episodes";
 import ProgressBar from "@/components/ProgressBar";
 
 export function generateStaticParams() {
@@ -15,7 +15,7 @@ export async function generateMetadata(
   const ep = getEpisode(episode);
   if (!ep) return { title: "ไม่พบตอนนี้" };
   return {
-    title: `Episode ${ep.number} — ${ep.title}`,
+    title: `${episodeLabel[ep.slug]} — ${ep.title}`,
     description: ep.tagline,
   };
 }
@@ -32,12 +32,12 @@ export default async function EpisodePage(props: PageProps<"/[episode]">) {
           หน้าแรก
         </Link>
         <span className="mx-1.5">/</span>
-        <span className="text-[#5b4638]">Episode {ep.number}</span>
+        <span className="text-[#5b4638]">{episodeLabel[ep.slug]}</span>
       </nav>
 
       <header className="mt-4 rounded-3xl border border-sand-200 bg-white/85 p-7 shadow-sm sm:p-9">
         <span className="inline-block rounded-full bg-coral-500 px-3 py-0.5 text-[12px] font-600 text-white">
-          Episode {ep.number}
+          {episodeLabel[ep.slug]}
         </span>
         <h1 className="mt-3 font-display text-3xl font-700 text-[#2f2119] sm:text-4xl">
           {ep.title}
@@ -54,7 +54,7 @@ export default async function EpisodePage(props: PageProps<"/[episode]">) {
       <div className="mt-6">
         <ProgressBar
           ids={stepIds(ep)}
-          label={`ความคืบหน้า Episode ${ep.number} ทั้งหมด`}
+          label={`ความคืบหน้า ${episodeLabel[ep.slug]} ทั้งหมด`}
           showReset
         />
       </div>
@@ -120,6 +120,22 @@ export default async function EpisodePage(props: PageProps<"/[episode]">) {
           </ul>
         </section>
       )}
+
+      {ep.notes?.length ? (
+        <section className="mt-10 rounded-2xl border border-[#f6dda0] bg-[#fff8e6] p-5">
+          <h2 className="font-display text-lg font-600 text-[#8a6b09]">
+            ⚠️ ข้อควรรู้ก่อนเริ่ม
+          </h2>
+          <ul className="mt-2 space-y-2 text-[14px] leading-relaxed text-[#6b5410]">
+            {ep.notes.map((n) => (
+              <li key={n} className="flex gap-2">
+                <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-[#c79a1e]" />
+                <span>{n}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
     </div>
   );
 }

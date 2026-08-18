@@ -57,13 +57,22 @@ export interface Chapter {
   steps: QuestStep[];
 }
 
+/** หมวดของไกด์ — เควสเนื้อเรื่องหลัก (EP) กับเควสสะสมสติกเกอร์ (Part) */
+export type GuideGroup = "ep" | "part";
+
 export interface Episode {
   slug: string;
+  /** หมวด: ep = เควสเนื้อเรื่อง, part = เควส Sticker */
+  group: GuideGroup;
   number: number;
   title: string;
   titleEn: string;
   tagline: string;
+  /** เลเวลที่เริ่มทำได้ */
+  levelHint?: string;
   areas: string[];
+  /** ข้อควรรู้รวมของไกด์ทั้งอัน แสดงบนหน้าภาพรวม */
+  notes?: string[];
   chapters: Chapter[];
   status: "ready" | "soon";
 }

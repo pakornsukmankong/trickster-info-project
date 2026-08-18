@@ -9,6 +9,7 @@ const nav = [
   { href: "/", label: "หน้าแรก" },
   { href: "/ep0", label: "EP 0" },
   { href: "/ep1", label: "EP 1" },
+  { href: "/part-1", label: "Part 1" },
   { href: "/monsters", label: "มอนสเตอร์" },
   { href: "/items", label: "ไอเทม" },
 ];

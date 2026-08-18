@@ -4,6 +4,7 @@ const img = (n: number) => `/images/ep0/ep0-${String(n).padStart(2, "0")}.jpg`;
 
 export const ep0: Episode = {
   slug: "ep0",
+  group: "ep",
   number: 0,
   title: "จุดเริ่มต้นของการผจญภัย",
   titleEn: "Episode 0 — The Start of an Adventure",
