@@ -98,6 +98,9 @@ const ITEM_ICONS: Record<string, string> = {
   "silk handkerchief": "silk-handkerchief",
   "volcano water": "volcano-water",
   "power plan battery": "power-plan-battery",
+
+  // Part 1
+  "shell shield neo": "shell-shield-neo",
 };
 
 const MONSTER_ICONS: Record<string, string> = {
@@ -117,6 +120,24 @@ const MONSTER_ICONS: Record<string, string> = {
   "cone stone": "cone-stone",
   naranjo: "naranjo",
   "pirate boxer b": "pirate-boxer-b",
+
+  // Part 1
+  "sea scorpion": "sea-scorpion",
+  pineapple: "pineapple",
+  "sand demon": "sand-demon",
+  pochi: "pochi",
+  kokebi: "kokebi",
+  simbatta: "simbatta",
+  turvy: "turvy",
+  sppo: "sppo",
+  "moss moth": "moss-moth",
+  "leaf bird": "leaf-bird",
+  larva: "larva",
+  koom: "koom",
+  aposis: "aposis",
+  guiana: "guiana",
+  lima: "lima",
+  chibcha: "chibcha",
 };
 
 const NPC_ICONS: Record<string, string> = {
@@ -153,6 +174,13 @@ const NPC_ICONS: Record<string, string> = {
   "item girl": "item-girl",
   marinel: "marinel",
   "explorer reina": "explorer-reina",
+
+  // Part 1
+  sandman: "sandman",
+  "homeless ian": "homeless-ian",
+  "miranda watty": "miranda-watty",
+  "scared popuri": "scared-popuri",
+  "keeper julio": "keeper-julio",
 };
 
 type Entry = { key: string; file: string; src: string };

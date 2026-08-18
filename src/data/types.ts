@@ -79,8 +79,8 @@ export interface Episode {
 
 export interface Monster {
   name: string;
-  /** ตอนที่เจอมอนตัวนี้ในเควส */
-  episode: string;
+  /** ไกด์ที่มอนตัวนี้โผล่ (มอนตัวเดียวอาจใช้หลายไกด์) */
+  guides: string[];
   type: "Power" | "Magic" | "Sense" | "Charm";
   level: number;
   hp: number;
