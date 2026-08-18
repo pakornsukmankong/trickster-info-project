@@ -4,12 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { episodeLabel, readyEpisodes } from "@/data/episodes";
 
+// ไล่จากทะเบียนไกด์ ไกด์ใหม่จะโผล่ในเมนูเองโดยไม่ต้องมาแก้ตรงนี้
 const nav = [
   { href: "/", label: "หน้าแรก" },
-  { href: "/ep0", label: "EP 0" },
-  { href: "/ep1", label: "EP 1" },
-  { href: "/part-1", label: "Part 1" },
+  ...readyEpisodes.map((e) => ({ href: `/${e.slug}`, label: episodeLabel[e.slug] })),
   { href: "/monsters", label: "มอนสเตอร์" },
   { href: "/items", label: "ไอเทม" },
 ];
