@@ -132,6 +132,16 @@ for (const dir of groups) {
   }
 }
 
+// --want items:caballa-sticker,flying-weight — ดึงไอคอนที่ยังไม่มีไฟล์อยู่เดิม
+// (ปกติสคริปต์จะไล่จากไฟล์ที่มีอยู่แล้วเพื่ออัปเกรดของเดิมเท่านั้น)
+for (const arg of process.argv.filter((a) => a.startsWith("--want="))) {
+  const [dir, names] = arg.slice("--want=".length).split(":");
+  if (!groups.includes(dir) || !names) continue;
+  for (const name of names.split(",").map((n) => n.trim()).filter(Boolean)) {
+    if (!wanted.some((w) => w.dir === dir && w.name === name)) wanted.push({ dir, name, isNew: true });
+  }
+}
+
 for (const { dir, name } of wanted) {
   const list = index.get(name);
   const needsOwnPage =
@@ -179,18 +189,23 @@ for (const { dir, name } of wanted) {
     continue;
   }
   const png = await sharp(raw).png().toBuffer();
-  const before = await sharp(target).metadata();
+  // ไฟล์ที่ยังไม่มี (มาจาก --want) ไม่มีของเดิมให้เทียบขนาด รับมาเลย
+  const before = await sharp(target)
+    .metadata()
+    .catch(() => null);
   const after = await sharp(png).metadata();
 
   // ไอเทมหลายชิ้นในวิกิมีแค่ไอคอน 25x25 ในเกม เล็กกว่าที่เราครอปไว้ ไม่ต้องทับ
-  if (dir === "items" && after.width * after.height <= before.width * before.height) {
+  if (dir === "items" && before && after.width * after.height <= before.width * before.height) {
     kept.push(`${dir}/${name} (วิกิเล็กกว่า ${after.width}x${after.height})`);
     continue;
   }
 
   if (!DRY) await writeFile(target, png);
   manifest[`${dir}/${name}`] = choice.file;
-  changed.push(`${dir}/${name}: ${before.width}x${before.height} -> ${after.width}x${after.height}`);
+  changed.push(
+    `${dir}/${name}: ${before ? `${before.width}x${before.height}` : "ใหม่"} -> ${after.width}x${after.height}`
+  );
 
   // NPC ตัวไหนมีแมพคู่กัน แปะหมุดแล้วเก็บเป็นไฟล์แยก
   if (dir === "npcs") {
@@ -222,8 +237,15 @@ for (const { dir, name } of wanted) {
 }
 
 if (!DRY) {
+  // รอบนี้บันทึกเฉพาะไฟล์ที่เปลี่ยน ต้องรวมกับของเดิม ไม่งั้นที่ดึงมารอบก่อนจะหายไป
+  const previous = await readFile(MANIFEST, "utf8")
+    .then((t) => JSON.parse(t))
+    .catch(() => ({}));
+  const merged = Object.fromEntries(
+    Object.entries({ ...previous, ...manifest }).sort(([a], [b]) => a.localeCompare(b))
+  );
   await mkdir(path.dirname(MANIFEST), { recursive: true });
-  await writeFile(MANIFEST, JSON.stringify(manifest, null, 2) + "\n", "utf8");
+  await writeFile(MANIFEST, JSON.stringify(merged, null, 2) + "\n", "utf8");
 }
 
 console.log(`\nเปลี่ยน ${changed.length} ไฟล์ / แมพ ${Object.keys(npcToMap).length} ไฟล์`);
