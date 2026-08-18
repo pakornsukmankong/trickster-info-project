@@ -1,7 +1,9 @@
 # Trickster Info — คู่มือเกม Trickster Online (ภาษาไทย)
 
-เว็บคู่มือเดินเควส Trickster Online เรียบเรียงจากอัลบั้มภาพของเพจ **Trickster Adventure**
+เว็บคู่มือเดินเควส Trickster Online เรียบเรียงจากอัลบั้มภาพของกลุ่ม **Trickster Adventure**
 บน Facebook ตอนนี้มีข้อมูลครบของ **Episode 0** และ **Episode 1** แล้ว
+
+จัดทำโดย [FLOKZ CHANNEL](https://www.youtube.com/@flokzchannel)
 
 ## รันโปรเจกต์
 
@@ -143,9 +145,11 @@ node tools/make-icons.mjs public/brand/trickster-info-logo.png src/app
 
 ## ที่มาของข้อมูล
 
-- [อัลบั้ม “Ep 0 เควส ชายหาด – ทะเลทราย”](https://www.facebook.com/media/set/?set=oa.2119324875486371&type=3) — 24 รูป
-- [อัลบั้ม “EP 1 เควส ซากโบราณ – ท่าเรือ”](https://www.facebook.com/media/set/?set=oa.1469326131227407&type=3) — 24 รูป
-- [อัลบั้ม “Episode + Key Quest จำนวนของที่ต้องใช้”](https://www.facebook.com/media/set?set=oa.3490341214689969&type=3) — 19 รูป (ยังไม่ได้นำเข้า)
+เนื้อหาทั้งหมดเรียบเรียงจากอัลบั้มภาพของกลุ่ม [Trickster Adventure](https://www.facebook.com/groups/1193501945887369)
+บน Facebook (EP 0 และ EP 1 ตอนละ 24 รูป) ไอคอนไอเทม มอนสเตอร์ และ NPC ตัดมาจากภาพต้นฉบับชุดเดียวกัน
 
-เครดิตข้อมูลและภาพทั้งหมดเป็นของเพจ Trickster Adventure และผู้จัดทำอัลบั้มต้นฉบับ
+ยังมีอัลบั้ม “Episode + Key Quest จำนวนของที่ต้องใช้” (19 รูป) ในกลุ่มเดียวกันที่ยังไม่ได้นำเข้า —
+เป็นงานถัดไปถ้าจะเพิ่มข้อมูลจำนวนของที่ต้องใช้ของแต่ละ Key Quest
+
+เครดิตข้อมูลและภาพทั้งหมดเป็นของกลุ่ม Trickster Adventure และผู้จัดทำอัลบั้มต้นฉบับ
 เว็บนี้เป็นคู่มือที่ทำโดยผู้เล่นเพื่อผู้เล่น ไม่ได้เกี่ยวข้องกับผู้ให้บริการเกม
