@@ -28,7 +28,14 @@ const MAPS = path.join(ICONS, "maps");
 const MANIFEST = path.join(ROOT, "tools/manifests/wiki-icons.json");
 
 const DRY = process.argv.includes("--dry");
-const INDEX_PAGES = ["Episode_0_Quests", "Episode_1_Quests"];
+// หน้ารวมที่ใช้เก็บ index ของภาพ + จับคู่มินิแมปของ NPC
+// Part 2 (Oops Wharf / Mermaid Palace / Ghost Blue) อยู่ในช่วง Episode 2–3
+const INDEX_PAGES = [
+  "Episode_0_Quests",
+  "Episode_1_Quests",
+  "Episode_2_Quests",
+  "Episode_3_Quests",
+];
 
 const ALIASES = {
   "baby-carrot": "Carrot",
