@@ -12,6 +12,7 @@ const TYPE_STYLE: Record<string, string> = {
   Magic: "bg-[#e0ecff] text-[#33549e]",
   Sense: "bg-[#efe6ff] text-[#5b3fa5]",
   Charm: "bg-[#ffeccf] text-[#a06a2c]",
+  Neutral: "bg-[#e8e4dd] text-[#5f5a52]",
 };
 
 export default function MonsterTable({ monsters }: { monsters: Monster[] }) {

@@ -81,7 +81,7 @@ export interface Monster {
   name: string;
   /** ไกด์ที่มอนตัวนี้โผล่ (มอนตัวเดียวอาจใช้หลายไกด์) */
   guides: string[];
-  type: "Power" | "Magic" | "Sense" | "Charm";
+  type: "Power" | "Magic" | "Sense" | "Charm" | "Neutral";
   level: number;
   hp: number;
   ap: number;
