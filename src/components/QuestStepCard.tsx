@@ -8,6 +8,9 @@ import ThingIcon from "./ThingIcon";
 import Lightbox from "./Lightbox";
 import { useProgress } from "@/lib/useProgress";
 
+/** ความสูงที่ใช้แสดงภาพ NPC ต้องตรงกับ h-[86px] ด้านล่าง */
+const NPC_DISPLAY_HEIGHT = 86;
+
 const CLASS_EMOJI: Record<string, string> = {
   Bunny: "🐰",
   Cat: "🐱",
@@ -74,23 +77,45 @@ export default function QuestStepCard({
 
       {npcs.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-3">
-          {npcs.map((n) => (
-            <figure
-              key={n.src}
-              className="overflow-hidden rounded-xl border border-sand-200 bg-white"
-            >
-              <Image
-                src={n.src}
-                alt={`${n.name} และจุดที่ยืนบนมินิแมป`}
-                width={220}
-                height={130}
-                className="h-[86px] w-auto object-contain"
-              />
-              <figcaption className="border-t border-sand-100 bg-sand-50 px-2 py-1 text-center text-[11px] text-sea-700">
-                {n.name}
-              </figcaption>
-            </figure>
-          ))}
+          {npcs.map((n) => {
+            // สไปรต์ที่ต้นฉบับเตี้ยกว่าช่องแสดงผลจะถูกเบราว์เซอร์ขยาย ถ้าปล่อยให้เกลี่ยสีจะเบลอเป็นก้อน
+            const upscaled = n.height < NPC_DISPLAY_HEIGHT;
+            return (
+              <figure
+                key={n.src}
+                className="overflow-hidden rounded-xl border border-sand-200 bg-white"
+              >
+                <div className="flex items-end gap-2 px-2 pt-2">
+                  <Image
+                    src={n.src}
+                    alt={n.name}
+                    width={n.width}
+                    height={n.height}
+                    // ตัวย่อภาพของ Next แปลงเป็น WebP คุณภาพ 75 ซึ่งทิ้งขอบสีเพี้ยนไว้รอบสไปรต์
+                    // ภาพพวกนี้ไม่กี่ KB อยู่แล้ว ส่งไฟล์ PNG ต้นฉบับไปเลยคุ้มกว่า
+                    unoptimized={upscaled}
+                    className="h-[86px] w-auto object-contain"
+                    // เรนเดอร์แบบ pixelated ขอบจะคมแบบภาพพิกเซลของเกม แทนที่จะเบลอ
+                    style={
+                      upscaled ? { imageRendering: "pixelated" } : undefined
+                    }
+                  />
+                  {n.map && (
+                    <Image
+                      src={n.map.src}
+                      alt={`จุดที่ ${n.name} ยืนบนมินิแมป`}
+                      width={n.map.width}
+                      height={n.map.height}
+                      className="h-[86px] w-auto rounded-md border border-sand-100 object-contain"
+                    />
+                  )}
+                </div>
+                <figcaption className="mt-2 border-t border-sand-100 bg-sand-50 px-2 py-1 text-center text-[11px] text-sea-700">
+                  {n.name}
+                </figcaption>
+              </figure>
+            );
+          })}
         </div>
       )}
 
@@ -116,12 +141,18 @@ export default function QuestStepCard({
                     <ThingIcon name={r.name} size={34} />
                     <div className="min-w-0">
                       <span className="font-600">{r.name}</span>
-                      {r.qty && <span className="text-coral-600"> × {r.qty}</span>}
+                      {r.qty && (
+                        <span className="text-coral-600"> × {r.qty}</span>
+                      )}
                       {r.from && (
-                        <span className="block text-[12.5px] text-sea-700">↳ {r.from}</span>
+                        <span className="block text-[12.5px] text-sea-700">
+                          ↳ {r.from}
+                        </span>
                       )}
                       {r.note && (
-                        <span className="block text-[12.5px] text-sea-700">{r.note}</span>
+                        <span className="block text-[12.5px] text-sea-700">
+                          {r.note}
+                        </span>
                       )}
                     </div>
                   </li>
@@ -144,7 +175,9 @@ export default function QuestStepCard({
                       <span className="font-600">{r.name}</span>
                       {r.qty && <span className="text-coral-600">{r.qty}</span>}
                       {r.note && (
-                        <span className="w-full text-[12.5px] text-sea-700">{r.note}</span>
+                        <span className="w-full text-[12.5px] text-sea-700">
+                          {r.note}
+                        </span>
                       )}
                     </div>
                   </li>
@@ -157,7 +190,9 @@ export default function QuestStepCard({
 
       {step.tips?.length ? (
         <div className="mt-4 rounded-xl border border-[#f6dda0] bg-[#fff8e6] p-3.5">
-          <h4 className="font-display text-[13px] font-600 text-[#8a6b09]">⚠️ ข้อควรรู้</h4>
+          <h4 className="font-display text-[13px] font-600 text-[#8a6b09]">
+            ⚠️ ข้อควรรู้
+          </h4>
           <ul className="mt-1.5 space-y-1.5 text-[13.5px] leading-relaxed">
             {step.tips.map((t) => (
               <li key={t}>{t}</li>

@@ -1,0 +1,67 @@
+/**
+ * ขนาดจริงของไฟล์ไอคอน NPC (กว้าง, สูง)
+ *
+ * ไฟล์นี้สร้างด้วย `node tools/measure-npc-icons.mjs` อย่าแก้มือ
+ * เพิ่ม/เปลี่ยนไอคอนแล้วรันใหม่
+ */
+export const npcIconSizes: Record<string, [number, number]> = {
+  "alchemist-nate": [48, 97],
+  "andrew": [38, 82],
+  "blacksmith-marx": [84, 95],
+  "bunny-maid": [51, 84],
+  "clever-owl": [45, 53],
+  "compounder-paul": [52, 84],
+  "don-giuvanni": [42, 78],
+  "driller-marky": [54, 93],
+  "explorer-reina": [53, 78],
+  "guide-sabrina": [45, 80],
+  "heidi": [45, 83],
+  "indiana-john": [47, 80],
+  "item-girl": [51, 87],
+  "lifeguard-bean": [66, 95],
+  "lifeguard-deen": [49, 90],
+  "louis-bitton": [74, 92],
+  "love-hunter-robin": [44, 84],
+  "marinel": [70, 85],
+  "mermaid-babe": [133, 140],
+  "model-mermaid-babe": [135, 160],
+  "monkey-t": [50, 52],
+  "officer-robert": [33, 87],
+  "old-artist": [82, 107],
+  "rosaline-gracia": [42, 86],
+  "shaman-girl-jia": [44, 85],
+  "skipper-min": [46, 79],
+  "steve-ryu": [41, 81],
+  "tango": [45, 38],
+  "tinnie": [44, 80],
+  "vagabond-eloy": [50, 81],
+  "winnie": [37, 71],
+};
+
+/** ขนาดของภาพมินิแมปที่ปักหมุดไว้แล้ว (กว้าง, สูง) */
+export const npcMapSizes: Record<string, [number, number]> = {
+  "alchemist-nate": [100, 76],
+  "andrew": [142, 107],
+  "blacksmith-marx": [100, 76],
+  "bunny-maid": [142, 125],
+  "clever-owl": [142, 107],
+  "don-giuvanni": [142, 77],
+  "driller-marky": [142, 77],
+  "explorer-reina": [48, 142],
+  "guide-sabrina": [135, 142],
+  "heidi": [142, 125],
+  "indiana-john": [142, 142],
+  "louis-bitton": [135, 142],
+  "love-hunter-robin": [71, 142],
+  "mermaid-babe": [142, 142],
+  "monkey-t": [114, 108],
+  "officer-robert": [142, 107],
+  "old-artist": [142, 142],
+  "rosaline-gracia": [142, 132],
+  "shaman-girl-jia": [142, 142],
+  "skipper-min": [142, 74],
+  "steve-ryu": [142, 107],
+  "tango": [142, 74],
+  "vagabond-eloy": [116, 110],
+  "winnie": [142, 125],
+};
