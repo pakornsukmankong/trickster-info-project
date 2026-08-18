@@ -2,7 +2,7 @@
  * ดึงไอคอน NPC / ไอเทม / มอนสเตอร์ / มินิแมป จากวิกิ ggftw (ผ่าน wikimirror.lifeto.co)
  *
  *   node tools/fetch-wiki-icons.mjs --dry    ดูว่าจะเปลี่ยนอะไรบ้าง ไม่เขียนไฟล์
- *   node tools/fetch-wiki-icons.mjs          เขียนไฟล์จริง + manifest + src/data/npcMaps.ts
+ *   node tools/fetch-wiki-icons.mjs          เขียนไฟล์จริง + manifest
  *
  * ทำไมต้องดึง: ไอคอนชุดเดิมครอปจากภาพถ่ายหน้าจอที่ผ่าน JPEG มาแล้ว ขอบเบลอและมีฝ้าติดมา
  * ของในวิกิดึงจากตัวเกมตรง ๆ มี alpha channel ขอบคมทุกพิกเซล
@@ -26,7 +26,6 @@ const ROOT = path.join(import.meta.dirname, "..");
 const ICONS = path.join(ROOT, "public/icons");
 const MAPS = path.join(ICONS, "maps");
 const MANIFEST = path.join(ROOT, "tools/manifests/wiki-icons.json");
-const NPC_MAPS_TS = path.join(ROOT, "src/data/npcMaps.ts");
 
 const DRY = process.argv.includes("--dry");
 const INDEX_PAGES = ["Episode_0_Quests", "Episode_1_Quests"];
@@ -93,8 +92,10 @@ function collect(html, into) {
 }
 
 /** หน้าเควสวาง <td> รูป NPC ติดกับ <td> รูปแมพที่มี Circle.gif ปักหมุดอยู่ */
+// alt ของภาพแมพเขียนไม่เหมือนกันทุกแถว บางแถวเป็น "Image:<ชื่อ>.png" บางแถวเป็นชื่อโซนเฉย ๆ
+// จึงดูแค่ว่า src ลงท้าย .png ไม่บังคับรูปแบบ alt
 const MAP_ROW =
-  /alt="Image:[^"]+\.gif"[^>]*src="([^"]+\.gif)"[\s\S]{0,700}?alt="Image:[^"]+\.png"[^>]*src="([^"]+\.png)"[\s\S]{0,500}?left:\s*(-?\d+)px;\s*top:\s*(-?\d+)px/g;
+  /alt="Image:[^"]+\.gif"[^>]*src="([^"]+\.gif)"[\s\S]{0,700}?<img[^>]*src="([^"]+\.png)"[\s\S]{0,500}?left:\s*(-?\d+)px;\s*top:\s*(-?\d+)px/g;
 
 /** src ในหน้าเป็น path เต็ม ตัดให้เหลือ <a>/<ab>/<file> แบบเดียวกับที่ใช้เรียก asset */
 const assetPath = (src) => src.replace(/^.*to-w\/images\//, "");
@@ -223,20 +224,6 @@ for (const { dir, name } of wanted) {
 if (!DRY) {
   await mkdir(path.dirname(MANIFEST), { recursive: true });
   await writeFile(MANIFEST, JSON.stringify(manifest, null, 2) + "\n", "utf8");
-  const names = Object.keys(npcToMap).sort();
-  await writeFile(
-    NPC_MAPS_TS,
-    `/**
- * NPC ที่มีภาพมินิแมปปักหมุดจุดที่ยืน อยู่ที่ /icons/maps/<ชื่อ>.png
- *
- * ไฟล์นี้สร้างด้วย \`node tools/fetch-wiki-icons.mjs\` อย่าแก้มือ
- */
-export const npcMaps = new Set<string>([
-${names.map((n) => `  "${n}",`).join("\n")}
-]);
-`,
-    "utf8"
-  );
 }
 
 console.log(`\nเปลี่ยน ${changed.length} ไฟล์ / แมพ ${Object.keys(npcToMap).length} ไฟล์`);

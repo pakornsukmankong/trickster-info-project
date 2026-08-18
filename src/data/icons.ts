@@ -6,7 +6,6 @@
  */
 
 import { npcIconSizes, npcMapSizes } from "./npcIconSizes";
-import { npcMaps } from "./npcMaps";
 
 const ITEM_ICONS: Record<string, string> = {
   "baby carrot": "baby-carrot",
@@ -218,11 +217,11 @@ export function findNpcIcons(npc: string): NpcIcon[] {
         src: h.src,
         width,
         height,
-        map: npcMaps.has(h.file)
+        map: npcMapSizes[h.file]
           ? {
               src: `/icons/maps/${h.file}.png`,
-              width: npcMapSizes[h.file]?.[0] ?? 142,
-              height: npcMapSizes[h.file]?.[1] ?? 125,
+              width: npcMapSizes[h.file][0],
+              height: npcMapSizes[h.file][1],
             }
           : undefined,
       };
