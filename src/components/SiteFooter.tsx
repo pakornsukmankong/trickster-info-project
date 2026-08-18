@@ -1,3 +1,5 @@
+import ViewCounter from "./ViewCounter";
+
 const GROUP_URL = "https://www.facebook.com/groups/1193501945887369";
 const CHANNEL_URL = "https://www.youtube.com/@flokzchannel";
 
@@ -25,17 +27,20 @@ export default function SiteFooter() {
           </a>
         </p>
 
-        <p className="mt-6 border-t border-sand-200 pt-5 text-[13px]">
-          เว็บนี้ทำโดย{" "}
-          <a
-            href={CHANNEL_URL}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="font-600 text-coral-600 underline underline-offset-2 hover:text-coral-500"
-          >
-            FLOKZ CHANNEL
-          </a>
-        </p>
+        <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-sand-200 pt-5">
+          <p className="text-[13px]">
+            เว็บนี้ทำโดย{" "}
+            <a
+              href={CHANNEL_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="font-600 text-coral-600 underline underline-offset-2 hover:text-coral-500"
+            >
+              FLOKZ CHANNEL
+            </a>
+          </p>
+          <ViewCounter />
+        </div>
 
         <p className="mt-4 text-[12px] text-sea-700/70">
           Trickster Online เป็นเครื่องหมายการค้าของเจ้าของลิขสิทธิ์

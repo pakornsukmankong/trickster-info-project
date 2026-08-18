@@ -73,7 +73,7 @@ src/
     items/  monsters/      หน้าอ้างอิง
     icon.png  apple-icon.png  opengraph-image.png
     sitemap.ts  robots.ts
-  components/              การ์ดเควส, แถบความคืบหน้า, lightbox, header/footer
+  components/              การ์ดเควส, แถบความคืบหน้า, lightbox, header/footer, ตัวนับผู้เข้าชม
   data/
     types.ts               โครงสร้างข้อมูลกลาง (Episode / Chapter / QuestStep / Item / Monster)
     ep0.ts  ep1.ts         ข้อมูลเควสของแต่ละตอน
@@ -142,6 +142,28 @@ node tools/make-icons.mjs public/brand/trickster-info-logo.png src/app
 
 เวลาเพิ่มไอคอนใหม่ อย่าลืมเพิ่มคีย์ใน `src/data/icons.ts` ด้วย
 ตัวจับคู่ใช้กติกา "คีย์ที่ยาวที่สุดที่อยู่ในชื่อนั้นชนะ" (เช่น `Golden Mole Feather` ชนะ `Golden Mole`)
+
+## ตัวนับผู้เข้าชม
+
+มีตัวนับ 2 ชั้น ไม่ต้องมี backend ของเราเอง
+
+**เลขที่โชว์ใน footer** — [`src/components/ViewCounter.tsx`](src/components/ViewCounter.tsx) ยิงไปที่
+[Abacus](https://jasoncameron.dev/abacus) บริการนับฟรีที่เรียกจากเบราว์เซอร์ได้ตรง ๆ
+นับเพิ่มครั้งเดียวต่อหนึ่ง session (จำด้วย `sessionStorage`) ตอน dev จะอ่านค่าอย่างเดียวไม่ยิงเพิ่ม
+ถ้าบริการล่มหรือโดน ad blocker บล็อกจะไม่แสดงอะไรเลย หน้าเว็บไม่พัง
+
+ตัวนับอยู่ที่ namespace `trickster-info-project.vercel.app` key `site-views`
+เลขนี้ใครก็ยิงเพิ่มได้ถ้ารู้ URL เอาไว้ประดับเว็บ ไม่ใช่สถิติที่เชื่อถือได้
+ถ้าโดนปั่นจนเพี้ยนให้รีเซ็ตด้วย admin key (เก็บไว้นอกรีโป อย่า commit)
+
+```bash
+curl -X POST -H "Authorization: Bearer <admin-key>" \
+  https://abacus.jasoncameron.dev/reset/trickster-info-project.vercel.app/site-views
+```
+
+**สถิติจริงสำหรับดูเอง** — `<Analytics />` จาก `@vercel/analytics` ใน `src/app/layout.tsx`
+ให้ทั้ง page view และ unique visitor แยกตามหน้า ดูได้ที่แท็บ Analytics ในโปรเจกต์บน Vercel
+(ต้องกดเปิด Web Analytics ใน dashboard ครั้งแรกก่อน) ตอน dev จะเป็น debug mode ไม่ส่งข้อมูลจริง
 
 ## ที่มาของข้อมูล
 
