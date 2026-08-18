@@ -1,6 +1,7 @@
 import ViewCounter from "./ViewCounter";
 
 const GROUP_URL = "https://www.facebook.com/groups/1193501945887369";
+const WIKI_URL = "https://wikimirror.lifeto.co/wiki.ggftw.com/trickster/Episode_0_Quests.html";
 const CHANNEL_URL = "https://www.youtube.com/@flokzchannel";
 
 export default function SiteFooter() {
@@ -13,19 +14,32 @@ export default function SiteFooter() {
         <p className="mt-1 text-[13px]">
           เนื้อหาทั้งหมดเรียบเรียงจากอัลบั้มภาพของกลุ่ม{" "}
           <span className="font-600">Trickster Adventure</span> บน Facebook
-          ไอคอนไอเทม มอนสเตอร์ และ NPC ตัดมาจากภาพต้นฉบับชุดเดียวกัน
           เครดิตข้อมูลและภาพเป็นของผู้ทำอัลบั้มต้นฉบับทั้งหมด
+          ส่วนไอคอน NPC ไอเทม มอนสเตอร์ และมินิแมป มาจากวิกิ{" "}
+          <span className="font-600">ggftw</span> ซึ่งเก็บไฟล์จากตัวเกมไว้
         </p>
-        <p className="mt-3">
-          <a
-            href={GROUP_URL}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="text-sea-500 underline underline-offset-2 hover:text-coral-500"
-          >
-            จากกลุ่ม Trickster Adventure
-          </a>
-        </p>
+        <ul className="mt-3 space-y-1">
+          <li>
+            <a
+              href={GROUP_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sea-500 underline underline-offset-2 hover:text-coral-500"
+            >
+              จากกลุ่ม Trickster Adventure
+            </a>
+          </li>
+          <li>
+            <a
+              href={WIKI_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-sea-500 underline underline-offset-2 hover:text-coral-500"
+            >
+              wikimirror.lifeto.co
+            </a>
+          </li>
+        </ul>
 
         <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-sand-200 pt-5">
           <p className="text-[13px]">

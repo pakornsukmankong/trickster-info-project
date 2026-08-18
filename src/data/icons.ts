@@ -5,6 +5,9 @@
  * จึงจับคู่แบบ "คีย์ที่ยาวที่สุดที่อยู่ในชื่อนั้นชนะ" เพื่อไม่ให้ "peng" ไปแย่งกับ "blue penguin"
  */
 
+import { npcIconSizes, npcMapSizes } from "./npcIconSizes";
+import { npcMaps } from "./npcMaps";
+
 const ITEM_ICONS: Record<string, string> = {
   "baby carrot": "baby-carrot",
   "level up guide": "level-up-guide",
@@ -153,11 +156,11 @@ const NPC_ICONS: Record<string, string> = {
   "explorer reina": "explorer-reina",
 };
 
-type Entry = { key: string; src: string };
+type Entry = { key: string; file: string; src: string };
 
 function toEntries(table: Record<string, string>, dir: string): Entry[] {
   return Object.entries(table)
-    .map(([key, file]) => ({ key, src: `/icons/${dir}/${file}.png` }))
+    .map(([key, file]) => ({ key, file, src: `/icons/${dir}/${file}.png` }))
     .sort((a, b) => b.key.length - a.key.length);
 }
 
@@ -180,22 +183,48 @@ export function monsterIcon(name: string): string | undefined {
   return file ? `/icons/monsters/${file}.png` : undefined;
 }
 
+export interface NpcIcon {
+  name: string;
+  src: string;
+  /** ขนาดจริงของไฟล์ ใช้บอก next/image และดูว่าภาพถูกขยายเกินตัวไหม */
+  width: number;
+  height: number;
+  /** มินิแมปที่ปักหมุดจุดที่ NPC ยืน (บางตัวไม่มี) */
+  map?: { src: string; width: number; height: number };
+}
+
 /** NPC หนึ่งขั้นตอนอาจมีหลายตัว เช่น "Officer Robert / Compounder Paul" */
-export function findNpcIcons(npc: string): { name: string; src: string }[] {
+export function findNpcIcons(npc: string): NpcIcon[] {
   const needle = npc.toLowerCase();
   const hits = NPC_ENTRIES.filter((e) => needle.includes(e.key)).map((e) => ({
     key: e.key,
+    file: e.file,
     src: e.src,
     at: needle.indexOf(e.key),
   }));
   // ตัดคีย์ที่ซ้อนอยู่ในคีย์ที่ยาวกว่าออก แล้วเรียงตามลำดับที่ปรากฏในข้อความ
   const kept = hits.filter(
-    (h) => !hits.some((o) => o !== h && o.key.length > h.key.length && o.key.includes(h.key))
+    (h) =>
+      !hits.some(
+        (o) => o !== h && o.key.length > h.key.length && o.key.includes(h.key),
+      ),
   );
   return kept
     .sort((a, b) => a.at - b.at)
-    .map((h) => ({
-      name: npc.slice(h.at, h.at + h.key.length),
-      src: h.src,
-    }));
+    .map((h) => {
+      const [width, height] = npcIconSizes[h.file] ?? [220, 130];
+      return {
+        name: npc.slice(h.at, h.at + h.key.length),
+        src: h.src,
+        width,
+        height,
+        map: npcMaps.has(h.file)
+          ? {
+              src: `/icons/maps/${h.file}.png`,
+              width: npcMapSizes[h.file]?.[0] ?? 142,
+              height: npcMapSizes[h.file]?.[1] ?? 125,
+            }
+          : undefined,
+      };
+    });
 }
