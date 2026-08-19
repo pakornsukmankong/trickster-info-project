@@ -1,6 +1,6 @@
 import type { Episode } from "./types";
 
-const img = (n: number) => `/images/ep1/ep1-${String(n).padStart(2, "0")}.jpg`;
+const img = (n: number) => `/images/ep1/ep1-${String(n).padStart(3, "0")}.jpg`;
 
 export const ep1: Episode = {
   slug: "ep1",
@@ -67,7 +67,7 @@ export const ep1: Episode = {
             "Old Artist คุยได้เฉพาะช่วงเวลากลางวันในเกมเท่านั้น",
             "อัตราสำเร็จพื้นฐานของการผสมชาโสมอยู่ที่ 45%",
           ],
-          images: [img(13), img(2)],
+          images: [img(2), img(3)],
         },
         {
           id: "e1c1-holy-water",
@@ -87,7 +87,7 @@ export const ep1: Episode = {
             { name: "Empty Container", kind: "item" },
             { name: "Fully-Filled Container", kind: "item", note: "ถังน้ำศักดิ์สิทธิ์สำหรับล้างพู่กัน" },
           ],
-          images: [img(14), img(15)],
+          images: [img(4), img(5)],
         },
         {
           id: "e1c1-portraits",
@@ -103,7 +103,7 @@ export const ep1: Episode = {
             { name: "Mermaid Babe's Portrait", kind: "item" },
           ],
           tips: ["คุยได้เฉพาะช่วงเวลากลางวัน"],
-          images: [img(3)],
+          images: [img(6)],
         },
         {
           id: "e1c1-antique-mirror",
@@ -119,7 +119,7 @@ export const ep1: Episode = {
             { name: "500 Galder Coupon", qty: "2 เหรียญ", from: "ขุดคูปองแบบเดียวกับเควสแรก" },
           ],
           rewards: [{ name: "Antique Mirror", kind: "item" }],
-          images: [img(4)],
+          images: [img(7)],
         },
         {
           id: "e1c1-fantastic-powder",
@@ -134,7 +134,7 @@ export const ep1: Episode = {
           requirements: [
             { name: "Fantastic Powder", from: "ขุดที่ Relics Field 4 – An Altar for Sacrifice" },
           ],
-          images: [img(16)],
+          images: [img(8)],
         },
         {
           id: "e1c1-chuu-check",
@@ -150,7 +150,7 @@ export const ep1: Episode = {
             { name: "Fantastic Hand Mirror", kind: "item" },
             { name: "Chuu~ Check", kind: "item", qty: "1 ใบ" },
           ],
-          images: [img(5)],
+          images: [img(9)],
         },
         {
           id: "e1c1-restored-necklace",
@@ -171,7 +171,7 @@ export const ep1: Episode = {
             },
           ],
           tips: ["Old Artist คุยได้เฉพาะช่วงเวลากลางวัน"],
-          images: [img(17)],
+          images: [img(10)],
         },
         {
           id: "e1c1-honey-tea",
@@ -192,7 +192,7 @@ export const ep1: Episode = {
           ],
           rewards: [{ name: "Unknown Old Document", kind: "item", qty: "1 แผ่น" }],
           tips: ["อัตราสำเร็จพื้นฐานของชาน้ำผึ้งอยู่ที่ 40%"],
-          images: [img(6), img(18)],
+          images: [img(11), img(12)],
         },
       ],
     },
@@ -216,7 +216,7 @@ export const ep1: Episode = {
             "รับภารกิจตามหา Weird Piece 3 ชิ้น",
             "ชิ้นแรกต้องไปเมืองท่า Oops Wharf",
           ],
-          images: [img(7)],
+          images: [img(13)],
         },
         {
           id: "e1c2-piece-1",
@@ -237,7 +237,7 @@ export const ep1: Episode = {
             },
           ],
           rewards: [{ name: "Weird Piece 1", kind: "item" }],
-          images: [img(19)],
+          images: [img(14)],
         },
         {
           id: "e1c2-piece-2",
@@ -257,7 +257,7 @@ export const ep1: Episode = {
             },
           ],
           rewards: [{ name: "Weird Piece 2", kind: "item" }],
-          images: [img(8), img(20)],
+          images: [img(15), img(16)],
         },
         {
           id: "e1c2-piece-3",
@@ -277,7 +277,7 @@ export const ep1: Episode = {
             },
           ],
           rewards: [{ name: "Weird Piece 3", kind: "item" }],
-          images: [img(9)],
+          images: [img(17)],
         },
         {
           id: "e1c2-box-key",
@@ -293,7 +293,7 @@ export const ep1: Episode = {
             { name: "Soil Attribute Stone", kind: "item", note: "หินดินหายาก ใช้คอม Golden Sword (Boss)" },
             { name: "Light Attribute Stone", kind: "item" },
           ],
-          images: [img(21)],
+          images: [img(18)],
         },
         {
           id: "e1c2-vendetta",
@@ -306,7 +306,7 @@ export const ep1: Episode = {
             "เอาไปคุย Indiana John เขาจะขอม้วนตำราพร้อมตะเกียง 2 อัน",
           ],
           rewards: [{ name: "Doc from Weird Box", kind: "item" }],
-          images: [img(10)],
+          images: [img(19)],
         },
         {
           id: "e1c2-lamplight",
@@ -331,7 +331,7 @@ export const ep1: Episode = {
               note: "เอกสารเล่าเรื่องรูปปั้นฮาคอนกับผู้พิทักษ์ 16 ตน",
             },
           ],
-          images: [img(22)],
+          images: [img(20)],
         },
       ],
     },
@@ -358,7 +358,7 @@ export const ep1: Episode = {
           requirements: [
             { name: "Harkon Necklace", qty: "1 เส้น", from: "เปิดกล่องหินสุ่ม Harkon Keepsake" },
           ],
-          images: [img(23)],
+          images: [img(21)],
         },
         {
           id: "e1c3-diving",
@@ -377,7 +377,7 @@ export const ep1: Episode = {
               from: "ขุด หรือดรอปจาก Cone Stone (Lv.84) @ Path to Mermaid Palace 1 / 2",
             },
           ],
-          images: [img(11)],
+          images: [img(22)],
         },
         {
           id: "e1c3-reina",
@@ -393,7 +393,7 @@ export const ep1: Episode = {
             { name: "Silk Handkerchief", kind: "item" },
             { name: "Volcano Water", kind: "item", qty: "3 ขวด" },
           ],
-          images: [img(24)],
+          images: [img(23)],
         },
         {
           id: "e1c3-battery",
@@ -419,7 +419,66 @@ export const ep1: Episode = {
             },
           ],
           rewards: [{ name: "500 Galder Coupon", qty: "5 อัน", kind: "money" }],
-          images: [img(12)],
+          images: [img(24)],
+        },
+        {
+          id: "e1c3-nono",
+          title: "ตามหา Fairy Nono",
+          npc: "Explorer Reina → Fairy Nono",
+          location: "Path to Mermaid Palace 1",
+          summary: [
+            "จบเควสของ Explorer Reina จะได้รับ Special Polisher",
+            "ตามหา Fairy Nono แล้วส่งเควสก่อนหน้าทั้งหมด — ผ้าเช็ดหน้า ยาขัด และน้ำภูเขาไฟ",
+          ],
+          requirements: [
+            { name: "Silk Handkerchief", from: "เควส Tango" },
+            { name: "Special Polisher", from: "เควส Explorer Reina" },
+            { name: "Volcano Water", from: "เควส Tango" },
+          ],
+          rewards: [
+            { name: "Special Polisher", kind: "item", note: "ยาขัดที่คืนความเงาให้หินกับอัญมณี" },
+            { name: "Nono's Note", kind: "book" },
+          ],
+          images: [img(25)],
+        },
+        {
+          id: "e1c3-transparent-medicine",
+          title: "ยาฟ้าล่องหนให้ Fairy Nono",
+          npc: "Fairy Nono / Compounder Paul",
+          location: "Path to Mermaid Palace 1 / Oops Wharf",
+          summary: [
+            "อีกรอบนางจะขอยาฟ้าล่องหน 1 ขวด",
+            "ผสมที่ Compounder Paul ที่ Oops Wharf โอกาสพื้นฐาน 40%",
+            "ขวดยา (Fairy's Drink) ขุดใต้น้ำตรงจุดส่งเควสได้ทั้ง 2 เขต ส่วนเศษฮาคอนได้มาจากเควสก่อนหน้า",
+          ],
+          requirements: [
+            { name: "Harkon Shard", qty: "1 ชิ้น", from: "เปิด Harkon Heirloom", note: "ควรสำรองเผื่อผสมแตก" },
+            {
+              name: "Super Bean Shell",
+              qty: "2 อัน",
+              from: "ตี Super Golden Mole (Lv.80) @ Path to Mermaid Palace 1",
+              note: "ถั่วชื่อ Extra Pod",
+            },
+            { name: "Fairy's Drink", qty: "1 ขวด", from: "ขุดใต้น้ำตรงจุดส่งเควส ได้ทั้ง 2 เขต" },
+          ],
+          rewards: [{ name: "Transparent Medicine", qty: "1 ขวด", kind: "potion" }],
+          images: [img(26), img(27)],
+        },
+        {
+          id: "e1c3-nono-ring",
+          title: "ปิดบทที่ 3 — แหวนโนโน",
+          npc: "Fairy Nono",
+          location: "Path to Mermaid Palace 1",
+          summary: ["ส่งยาฟ้าล่องหนที่เดิม เป็นอันจบภารกิจ Episode 1 Chapter 3"],
+          requirements: [{ name: "Transparent Medicine", qty: "1 ขวด" }],
+          rewards: [
+            {
+              name: "Nono Ring",
+              kind: "equip",
+              note: "Lv.50 — AC 8, MA 5, LK 5 / Compound ได้: MA, AC, LK (2 ช่อง)",
+            },
+          ],
+          images: [img(28)],
         },
       ],
     },

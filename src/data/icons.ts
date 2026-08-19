@@ -241,6 +241,15 @@ const ITEM_ICONS: Record<string, string> = {
   "buffalo calf": "buffalo-calf",
   "dragon whelp": "dragon-whelp",
   "raccoon cub": "raccoon-cub",
+
+  // Episode 1 — สาย Fairy Nono
+  "special polisher": "special-polisher",
+  "nono's note": "nonos-note",
+  "harkon shard": "harkon-shard",
+  "super bean shell": "super-bean-shell",
+  "fairy's drink": "fairys-drink",
+  "transparent medicine": "transparent-medicine",
+  "nono ring": "nono-ring",
 };
 
 const MONSTER_ICONS: Record<string, string> = {
@@ -383,6 +392,9 @@ const NPC_ICONS: Record<string, string> = {
   // Episode 0 — Welcome Seal 4-8 + สายตัวละคร
   kristoffer: "kristoffer-j",
   dorothy: "dorothy",
+
+  // Episode 1 — สาย Fairy Nono
+  "fairy nono": "fairy-nono",
 };
 
 type Entry = { key: string; file: string; src: string };

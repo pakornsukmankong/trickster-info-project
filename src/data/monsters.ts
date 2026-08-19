@@ -671,7 +671,7 @@ export const part2Monsters: Monster[] = [
   },
   {
     name: "Super Golden Mole",
-    guides: ["part-2"],
+    guides: ["ep1", "part-2"],
     type: "Charm",
     level: 80,
     hp: 3180,
@@ -685,7 +685,7 @@ export const part2Monsters: Monster[] = [
     weakness: "Gun",
     resistance: "Water, Light",
     locations: ["Path to Mermaid Palace 1"],
-    drops: ["Waterworm"],
+    drops: ["Waterworm", "Super Bean Shell"],
   },
   {
     name: "Master Foe",
