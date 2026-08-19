@@ -250,6 +250,62 @@ const ITEM_ICONS: Record<string, string> = {
   "fairy's drink": "fairys-drink",
   "transparent medicine": "transparent-medicine",
   "nono ring": "nono-ring",
+
+  // Episode 2 — Mirage Island
+  "sword of vengeance": "sword-of-vengeance",
+  "dark cloth": "dark-cloth",
+  "robin's letter": "robins-letter",
+  "art stone rod": "art-stone-rod",
+  "black pearl": "black-pearl",
+  "sturdy scale": "sturdy-scale",
+  scabbard: "scabbard",
+  "blank check": "blank-check",
+  "giuvanni's tear": "giuvannis-tear",
+  "tear soaked check": "tear-soaked-check",
+  "voucher of promise": "voucher-of-promise",
+  "clay tablet": "clay-tablet",
+  "decoded document": "decoded-document",
+  "cruise ticket": "cruise-ticket",
+  abiox: "abiox",
+  "yellow flame incense": "yellow-flame-incense",
+  "yellow musical score": "yellow-musical-score",
+  "mirror spring water": "mirror-spring-water",
+  "silver platter": "silver-platter",
+  "magical silver platter": "magical-silver-platter",
+  "purple flame incense": "purple-flame-incense",
+  "purple musical score": "purple-musical-score",
+  "moonlight coral": "moonlight-coral",
+  "whale baleen": "whale-baleen",
+  crescent: "crescent",
+  cacao: "cacao",
+  "mysterious milk": "mysterious-milk",
+  "dark choco piece": "dark-choco-piece",
+  "dark attribute stone": "dark-attribute-stone",
+  "sharp spear": "sharp-spear",
+  "fabilsag's stinger": "fabilsags-stinger",
+  "venomous canine": "venomous-canine",
+  "witch's deadly poison": "witchs-deadly-poison",
+  "white lily bouquet": "white-lily-bouquet",
+  "mirage drill": "mirage-drill",
+  "fluorescent marble": "fluorescent-marble",
+  "cursed scroll": "cursed-scroll",
+  "anklet of ocean spirit": "anklet-of-ocean-spirit",
+  "earthen fate necklace": "earthen-fate-necklace",
+  "water attribute stone": "water-attribute-stone",
+  "ocean conch": "ocean-conch",
+  "mirage shield": "mirage-shield",
+  "ancient feather pen": "ancient-feather-pen",
+  papyrus: "papyrus",
+  "bloody rune of fate": "bloody-rune-of-fate",
+  "mirage helm": "mirage-helm",
+  "sky's fate necklace": "skys-fate-necklace",
+  "dark earth fate necklace": "dark-earth-fate-necklace",
+  "shard of spirit": "shard-of-spirit",
+  "blessed scroll": "blessed-scroll",
+  "ancient treasure box": "ancient-treasure-box",
+  "mirage sword": "mirage-sword",
+  "mirage gun": "mirage-gun",
+  "mirage staff": "mirage-staff",
 };
 
 const MONSTER_ICONS: Record<string, string> = {
@@ -320,6 +376,18 @@ const MONSTER_ICONS: Record<string, string> = {
   "fanta slime": "fanta-slime",
   "fanta fish": "fanta-fish",
   "grumpy octopus": "grumpy-octopus",
+
+  // Episode 2 — Mirage Island
+  clione: "clione",
+  uraeus: "uraeus",
+  "merman aqu": "merman-aqu",
+  werepot: "werepot",
+  fabilsag: "fabilsag",
+  "fabilsag g": "fabilsag-g",
+  "sea spirit": "sea-spirit",
+  "dark hollow": "dark-hollow",
+  "sea hyena": "sea-hyena",
+  "don giuvanni": "don-giuvanni",
 };
 
 const NPC_ICONS: Record<string, string> = {
@@ -395,6 +463,18 @@ const NPC_ICONS: Record<string, string> = {
 
   // Episode 1 — สาย Fairy Nono
   "fairy nono": "fairy-nono",
+
+  // Episode 2 — Mirage Island
+  kahlihara: "kahlihara",
+  "bard la fimmel": "bard-la-fimmel",
+  "la fimmel": "bard-la-fimmel",
+  portina: "portina",
+  "nefertiti 2": "nefertiti-2",
+  "knight scar": "knight-scar",
+  "enkicladus 1": "enkicladus-1",
+  "enkicladus 2": "enkicladus-2",
+  clotho: "clotho",
+  lachesis: "lachesis",
 };
 
 type Entry = { key: string; file: string; src: string };
