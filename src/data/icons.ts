@@ -217,6 +217,30 @@ const ITEM_ICONS: Record<string, string> = {
   "whale essence": "whale-essence",
   "dead man's incense": "dead-mans-incense",
   "ghost blue spirit": "ghost-blue-spirit",
+
+  // Episode 0 — Welcome Seal 4-8 + สายตัวละคร
+  salt: "salt",
+  "salted dry fish": "salted-dry-fish",
+  earthworm: "earthworm",
+  "scorpion jerky": "scorpion-jerky",
+  "twinkle star": "twinkle-star",
+  "illegal cd": "illegal-cd",
+  "color pencils": "color-pencils",
+  pen: "pen",
+  postcard: "postcard",
+  swimsuit: "swimsuit",
+  "signed agreement": "signed-agreement",
+  "accurate ring": "accurate-ring",
+  "fox card": "fox-card",
+  "lion card": "lion-card",
+  "buffalo card": "buffalo-card",
+  "dragon card": "dragon-card",
+  "raccoon card": "raccoon-card",
+  "fox pup": "fox-pup",
+  "lion cub": "lion-cub",
+  "buffalo calf": "buffalo-calf",
+  "dragon whelp": "dragon-whelp",
+  "raccoon cub": "raccoon-cub",
 };
 
 const MONSTER_ICONS: Record<string, string> = {
@@ -282,6 +306,11 @@ const MONSTER_ICONS: Record<string, string> = {
   "nora joe": "nora-joe",
   "nora mummy": "nora-mummy",
   "nora big": "nora-big",
+
+  // Episode 0 — Welcome Seal 4-8 + สายตัวละคร
+  "fanta slime": "fanta-slime",
+  "fanta fish": "fanta-fish",
+  "grumpy octopus": "grumpy-octopus",
 };
 
 const NPC_ICONS: Record<string, string> = {
@@ -350,6 +379,10 @@ const NPC_ICONS: Record<string, string> = {
   vinosh: "vinosh",
   "weepy nora": "weepy-nora",
   mint: "mint",
+
+  // Episode 0 — Welcome Seal 4-8 + สายตัวละคร
+  kristoffer: "kristoffer-j",
+  dorothy: "dorothy",
 };
 
 type Entry = { key: string; file: string; src: string };
