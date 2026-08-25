@@ -1,0 +1,457 @@
+import type { Episode } from "./types";
+
+const img = (n: number) => `/images/ep4/ep4-${String(n).padStart(3, "0")}.jpg`;
+
+export const ep4: Episode = {
+  slug: "ep4",
+  group: "ep",
+  number: 4,
+  title: "ใต้เมือง Megalo",
+  titleEn: "Episode 4 — Beyond the Veil",
+  levelHint: "เริ่มที่ Lv.150",
+  tagline:
+    "กดแผ่นทองแดงใต้รูปปั้นที่ Alteo แล้วร่วงไปโผล่ห้องพัฒนาลับใต้ดินของบริษัท Megalo พบตัวนักพัฒนาเกมตัวจริงในเนื้อเรื่อง ก่อนไล่ตามผีในตำนานเมือง",
+  areas: [
+    "Underground Dev Room – Lobby",
+    "Underground Dev Room – Dev Room",
+    "Underground Dev Room – System Control Room",
+    "Underground Dev Room – Underground Passage 1–5",
+  ],
+  status: "ready",
+  notes: [
+    "ทางเข้าคือ Statue's Cooper Plate ที่ Alteo กดลงไปจะร่วงไปโผล่ Underground Passage 4 พอได้ Emergency Key จากเควสแรกแล้วจะวาร์ปมา Lobby ได้ตลอด",
+    "NPC หลายตัว (Developer J/H/K/Y) คุยได้เฉพาะเวลากลางวัน ส่วนสาย Chapter 3 (Don Danihen) คุยได้เฉพาะเวลากลางคืน",
+    "Americano / Green Tea / Capuccino / Hot Cup Noodles ผสมที่ Water Dispenser (Lobby) โอกาสพื้นฐาน 30% ทั้งหมด วัตถุดิบขุดได้เขตเดียวคือ System Control Room",
+    "มอนในเขตนี้ (Merchant Mon, Robber Mole, Win32 Worm) ยังไม่มีข้อมูลค่าสถานะในวิกิ ไม่ทราบเลข HP/AP ที่แน่ชัด",
+  ],
+  chapters: [
+    {
+      slug: "chapter-1",
+      number: 1,
+      title: "คำเชิญจากบริษัท",
+      titleEn: "Chapter 1 — Company Invitation",
+      area: "Underground Dev Room – Lobby / Dev Room / System Control Room",
+      levelHint: "เริ่มที่ Lv.150",
+      intro:
+        "กดแผ่นทองแดงใต้รูปปั้นที่ Alteo จะร่วงลงไปโผล่ Underground Passage 4 ไล่ทำความรู้จักทีมพัฒนาเกม Megalo Company ตัวจริงในเนื้อเรื่อง",
+      steps: [
+        {
+          id: "e4c1-craven-bag",
+          title: "ตามหา Coward Craven",
+          npc: "Coward Craven",
+          location: "Underground Dev Room – Underground Passage 4",
+          summary: [
+            "กดแผ่นทองแดงใต้รูปปั้น (Statue's Cooper Plate) ที่ Alteo จะร่วงลงไปโผล่ Underground Passage 4",
+            "ไปให้ถึงเขต 4 หา Coward Craven แล้วตีมอนหาถุงใบปลิว",
+          ],
+          requirements: [
+            { name: "Merchant Mon's Bag", qty: "5 ถุง", from: "ตี Merchant Mon (Lv.186)" },
+          ],
+          images: [img(1)],
+        },
+        {
+          id: "e4c1-craven-key",
+          title: "รับกุญแจฉุกเฉิน",
+          npc: "Coward Craven",
+          location: "Underground Dev Room – Underground Passage 4",
+          summary: [
+            "ส่งถุงครบแล้วจะไปโผล่ที่ Underground Dev Room – Lobby",
+            "พร้อมรับกุญแจที่ใช้ลงมาได้ตลอด",
+          ],
+          requirements: [{ name: "Merchant Mon's Bag", qty: "5 ถุง" }],
+          rewards: [
+            { name: "Emergency Key", kind: "item", note: "ใช้วาร์ปมา Lobby ได้ตลอด" },
+          ],
+          images: [img(2)],
+        },
+        {
+          id: "e4c1-giuvanni",
+          title: "Don Giuvanni — เอกสารลับ",
+          npc: "Don Giuvanni",
+          location: "Underground Dev Room – Dev Room",
+          summary: [
+            "คุย Don Giuvanni ตามหาของ 2 อย่างจากมอนตัวเดียวกัน",
+          ],
+          requirements: [
+            { name: "Nondisclosure Agreement", from: "ตี Robber Mole (Lv.230) @ Dev Room" },
+            { name: "Pen (UDR)", from: "ตี Robber Mole (Lv.230) @ Dev Room" },
+          ],
+          images: [img(3)],
+        },
+        {
+          id: "e4c1-giuvanni-turnin",
+          title: "ส่งเอกสาร — พบ Lead Developer",
+          npc: "Don Giuvanni → Lead Developer",
+          location: "Underground Dev Room – Dev Room",
+          summary: [
+            "ส่งของครบจะได้ 500 Galder Coupon 15 เหรียญ",
+            "Lead Developer อยู่ใกล้ ๆ จะขอกาแฟ 1 แก้ว",
+          ],
+          requirements: [{ name: "Nondisclosure Agreement" }, { name: "Pen (UDR)" }],
+          rewards: [{ name: "500 Galder Coupon", qty: "15 เหรียญ", kind: "money" }],
+          images: [img(4)],
+        },
+        {
+          id: "e4c1-americano",
+          title: "ชง Americano ให้ Lead Developer",
+          npc: "Lead Developer",
+          location: "Underground Dev Room – Lobby",
+          summary: [
+            "ผสมที่ Water Dispenser (Lobby) โอกาสพื้นฐาน 30% — Company Mug 1 + Coffee Beans 1",
+            "Company Mug ขุดได้เขตเดียวที่ System Control Room",
+          ],
+          requirements: [
+            { name: "Americano", qty: "1 แก้ว", from: "ผสมที่ Water Dispenser @ Lobby" },
+          ],
+          rewards: [
+            { name: "Leader Dev Card", kind: "card" },
+            { name: "500 Galder Coupon", qty: "15 เหรียญ", kind: "money" },
+          ],
+          images: [img(5), img(6)],
+        },
+        {
+          id: "e4c1-developer-j",
+          title: "Developer J — ใบปลิวขายของ",
+          npc: "Developer J",
+          location: "Underground Dev Room – Dev Room",
+          summary: ["คุยได้เฉพาะเวลากลางวัน", "ตามหาห่อใบปลิว 10 แผ่นจาก Merchant Mon"],
+          requirements: [
+            { name: "Merchant Mon's Leaflet Bundle", qty: "10 แผ่น", from: "ตี Merchant Mon (Lv.186)" },
+          ],
+          images: [img(7)],
+        },
+        {
+          id: "e4c1-developer-h",
+          title: "Developer H — บะหมี่ร้อน",
+          npc: "Developer H",
+          location: "Underground Dev Room – System Control Room",
+          summary: [
+            "ส่งเสร็จจะได้ยาฟ้า C 10 ขวด กับการ์ด 2 ใบ",
+            "Developer H คุยได้เฉพาะเวลากลางวัน จะขอบะหมี่ร้อน 1 ถ้วย",
+            "ผสมที่ Water Dispenser (Lobby) — Cup Noodles 1 + Wooden Chopsticks 1 โอกาสพื้นฐาน 30%",
+          ],
+          requirements: [
+            { name: "Hot Cup Noodles", qty: "1 ถ้วย", from: "ผสมที่ Water Dispenser @ Lobby" },
+          ],
+          rewards: [{ name: "ยา C", qty: "10 ขวด", kind: "potion" }],
+          tips: ["Cup Noodles กับ Wooden Chopsticks ขุดได้เขตเดียวที่ System Control Room"],
+          images: [img(8), img(9), img(10)],
+        },
+        {
+          id: "e4c1-developer-k",
+          title: "Developer K — ตามหาแฟนอาร์ต",
+          npc: "Developer K",
+          location: "Underground Dev Room – Dev Room",
+          summary: [
+            "คุยได้เฉพาะเวลากลางวัน ตามหาแฟนอาร์ต 6 แผ่น",
+            "2 แผ่นแรกขุดในบริเวณนี้ได้เลย ส่วนที่เหลือดรอปจากมอนต่าง ๆ ในเขต",
+          ],
+          requirements: [
+            { name: "Fanart", qty: "2 แผ่น", from: "ขุดที่ Underground Dev Room – Dev Room" },
+            { name: "Fanart", qty: "4 แผ่น", from: "ดรอปจากมอนต่าง ๆ ในเขต Underground Dev Room" },
+          ],
+          images: [img(11)],
+        },
+        {
+          id: "e4c1-finish",
+          title: "ปิดบทที่ 1",
+          npc: "Developer K",
+          location: "Underground Dev Room – Dev Room",
+          summary: ["ส่งแฟนอาร์ตครบ 6 แผ่น เป็นอันจบ Chapter 1"],
+          requirements: [{ name: "Fanart", qty: "6 แผ่น" }],
+          rewards: [
+            { name: "Developer's Journal", kind: "book" },
+            { name: "ยา C", qty: "10 ขวด", kind: "potion" },
+          ],
+          images: [img(12)],
+        },
+      ],
+    },
+    {
+      slug: "chapter-2",
+      number: 2,
+      title: "บันทึกของนักพัฒนา",
+      titleEn: "Chapter 2 — Development Diary",
+      area: "Underground Dev Room – Dev Room / System Control Room",
+      levelHint: "หลังจบ Chapter 1",
+      intro:
+        "Developer's PC ต้องการรหัสผ่านและไฟล์สำรอง ก่อนไล่ชงเครื่องดื่มให้ Developer Y แล้วปิดท้ายด้วยเควสขุดขยะของ Waste Basket",
+      steps: [
+        {
+          id: "e4c2-worm",
+          title: "รหัสผ่าน Developer's PC",
+          npc: "Developer's PC",
+          location: "Underground Dev Room – System Control Room",
+          summary: [
+            "ไปหา Key 5 แบบจากมอนตัวเดียวกัน ตอนส่งใส่รหัสตามภาพที่ปุ่มคีย์บอร์ดขึ้นให้ (สะกดเป็น G-H-O-S-T)",
+          ],
+          requirements: [{ name: "Key", qty: "5 แบบ", from: "ตี Win32 Worm (Lv.235) @ System Control Room" }],
+          rewards: [{ name: "ยา C", qty: "10 ขวด", kind: "potion" }],
+          images: [img(13), img(14)],
+        },
+        {
+          id: "e4c2-backup",
+          title: "หา Backup CD",
+          npc: "Developer's PC",
+          location: "Underground Dev Room – System Control Room",
+          summary: ["ตามหา Backup CD ที่ดรอปจาก Merchant Mon", "ส่งเสร็จมีเควสต่ออีกหา Antivirus Program"],
+          requirements: [{ name: "Backup CD", from: "ตี Merchant Mon (Lv.186)" }],
+          rewards: [{ name: "ยา C", qty: "10 ขวด", kind: "potion" }],
+          images: [img(14)],
+        },
+        {
+          id: "e4c2-developer-y",
+          title: "Developer Y — เครื่องดื่มสำหรับงานสัมมนา",
+          npc: "Developer Y",
+          location: "Underground Dev Room – System Control Room",
+          summary: [
+            "คุยได้เฉพาะเวลากลางวัน จะขอเครื่องดื่มแบบละ 5 แก้ว",
+            "ผสมที่ Water Dispenser — Capuccino (Company Mug + Instant Coffee) / Green Tea (Company Mug + Green Tea Bag) โอกาสพื้นฐาน 30%",
+          ],
+          requirements: [
+            { name: "Capuccino", qty: "5 แก้ว", from: "ผสมที่ Water Dispenser @ Lobby" },
+            { name: "Green Tea", qty: "5 แก้ว", from: "ผสมที่ Water Dispenser @ Lobby" },
+          ],
+          tips: ["Instant Coffee กับ Green Tea Bag ขุดได้เขตเดียวที่ System Control Room"],
+          images: [img(15), img(16)],
+        },
+        {
+          id: "e4c2-antivirus",
+          title: "ส่ง Antivirus Program",
+          npc: "Developer's PC",
+          location: "Underground Dev Room – System Control Room",
+          summary: ["เอา Antivirus Program จากเควส Developer Y ไปส่งที่ Developer's PC"],
+          requirements: [{ name: "Antivirus Program", from: "เควส Developer Y" }],
+          rewards: [
+            { name: "Developer's PC Card", kind: "card" },
+            { name: "Developer's Journal", kind: "book" },
+          ],
+          images: [img(17), img(18)],
+        },
+        {
+          id: "e4c2-finish",
+          title: "ปิดบทที่ 2 — ขยะ 100 แผ่น",
+          npc: "Waste Basket",
+          location: "Underground Dev Room – Dev Room",
+          summary: [
+            "คุย Waste Basket จะต้องไปขุดขยะมา 100 แผ่น",
+            "ทางลงใต้ดินไปขุดง่ายกว่า",
+          ],
+          requirements: [
+            { name: "Trash", qty: "100 แผ่น", from: "ขุดที่ Underground Dev Room ทุกเขต" },
+          ],
+          rewards: [
+            { name: "Trash Can Card", kind: "card" },
+            { name: "Urban Legend Note", kind: "book" },
+          ],
+          images: [img(19)],
+        },
+      ],
+    },
+    {
+      slug: "chapter-3",
+      number: 3,
+      title: "ผีแห่งห้องพัฒนา",
+      titleEn: "Chapter 3 — The Ghost of Dev Room",
+      area: "Underground Dev Room – Dev Room / Lobby / Rose Garden Fields",
+      levelHint: "หลังจบ Chapter 2",
+      intro:
+        "Don Danihen เล่าเรื่องผีในตำนานของห้องพัฒนา ไล่ตามหากุญแจกับสร้อยให้ Rosaline Gracia ก่อนไปช่วย Old Artist ซ่อมภาพ จบด้วยชุดอุปกรณ์ Don Cavalier",
+      steps: [
+        {
+          id: "e4c3-danihen-1",
+          title: "Don Danihen — ตำนานผี",
+          npc: "Don Danihen → Rosaline Gracia",
+          location: "Underground Dev Room – Dev Room / Lobby",
+          summary: [
+            "คุยได้เฉพาะเวลากลางคืน รับเควสไว้ก่อน",
+            "ตามหา Rosaline Gracia ที่ Lobby เพื่อไปขุด 2 อย่าง",
+          ],
+          requirements: [
+            { name: "Delicate Key", from: "ขุดที่ Rose Garden Fields" },
+            { name: "Necklace Chain", from: "ขุดที่ Underground Dev Room – Dev Room" },
+          ],
+          rewards: [{ name: "500 Galder Coupon", qty: "15 เหรียญ", kind: "money" }],
+          images: [img(20), img(21)],
+        },
+        {
+          id: "e4c3-craven-2",
+          title: "Coward Craven — 2 เควสรวด",
+          npc: "Coward Craven",
+          location: "Underground Dev Room – System Control Room",
+          summary: [
+            "ส่งเควส 2 อย่างต่อกัน ของทั้งหมดขุดได้ในเขตนี้",
+            "1. Emergency Lantern — ไม่ได้รางวัลพิเศษ",
+            "2. Pork Bellies + Green Bull Tonic — ได้รางวัล",
+          ],
+          requirements: [
+            { name: "Emergency Lantern", from: "ขุดที่ System Control Room" },
+            { name: "Pork Bellies", from: "ขุดที่ System Control Room" },
+            { name: "Green Bull Tonic", from: "ขุดที่ System Control Room" },
+          ],
+          rewards: [
+            { name: "500 Galder Coupon", qty: "15 เหรียญ", kind: "money" },
+            { name: "ยา C", qty: "10 ขวด", kind: "potion" },
+          ],
+          images: [img(22)],
+        },
+        {
+          id: "e4c3-danihen-2",
+          title: "Don Danihen — สืบสวนต่อ",
+          npc: "Don Danihen",
+          location: "Underground Dev Room – Dev Room",
+          summary: ["กลับไปหา Don Danihen (เฉพาะเวลากลางคืน) รับเควสต่อ"],
+          rewards: [
+            { name: "500 Galder Coupon", qty: "15 เหรียญ", kind: "money" },
+            { name: "Blank Check (UDR)", kind: "item" },
+          ],
+          images: [img(23)],
+        },
+        {
+          id: "e4c3-old-artist",
+          title: "Old Artist — ซ่อมภาพวาด",
+          npc: "Old Artist",
+          location: "Underground Dev Room – Lobby",
+          summary: ["เอา Blank Check กับผ้าดำไปให้ Old Artist"],
+          requirements: [
+            { name: "Blank Check (UDR)" },
+            { name: "Dark Cloth", from: "ตี Crow (Lv.88)" },
+          ],
+          rewards: [{ name: "Receipt Envelope", kind: "item" }],
+          images: [img(24)],
+        },
+        {
+          id: "e4c3-receipt",
+          title: "ส่งใบเสร็จคืน Don Danihen",
+          npc: "Don Danihen",
+          location: "Underground Dev Room – Dev Room",
+          summary: ["กลับไปหา Don Danihen (เฉพาะเวลากลางคืน) ส่งใบเสร็จ"],
+          requirements: [{ name: "Receipt Envelope" }],
+          rewards: [{ name: "Secret Letter 1", kind: "book" }],
+          images: [img(25)],
+        },
+        {
+          id: "e4c3-lead-developer",
+          title: "Lead Developer — จดหมายลับใบที่ 1",
+          npc: "Lead Developer",
+          location: "Underground Dev Room – Lobby",
+          summary: ["ส่ง Secret Letter 1 ให้ Lead Developer"],
+          requirements: [{ name: "Secret Letter 1" }],
+          rewards: [
+            { name: "Don Cavalier Wep Exchange", kind: "item", note: "แลกกับ Mint @ Lobby" },
+            { name: "Secret Letter 2", kind: "book" },
+          ],
+          images: [img(26)],
+        },
+        {
+          id: "e4c3-officer-robert",
+          title: "Officer Robert — จดหมายลับใบที่ 2",
+          npc: "Officer Robert",
+          location: "Underground Dev Room – Lobby",
+          summary: ["ส่ง Secret Letter 2 ให้ Officer Robert"],
+          requirements: [{ name: "Secret Letter 2" }],
+          rewards: [
+            { name: "Don Cavalier's Hat", kind: "equip" },
+            { name: "Secret Letter 3", kind: "book" },
+          ],
+          images: [img(27)],
+        },
+        {
+          id: "e4c3-finish",
+          title: "ปิดบทที่ 3 — จดหมายลับใบสุดท้าย",
+          npc: "Rosaline Gracia → Don Cavalier",
+          location: "Underground Dev Room – Lobby / Ocean of the Past",
+          summary: [
+            "ส่ง Secret Letter 3 ให้ Rosaline Gracia",
+            "กด Hologram Port ที่ได้มาเพื่อวาร์ปไป Ocean of the Past คุย Don Cavalier ที่นั่น ถือว่าจบ Chapter 3",
+          ],
+          requirements: [{ name: "Secret Letter 3" }],
+          rewards: [
+            { name: "Don Cavalier's Shield", kind: "equip" },
+            { name: "Hologram Port (Ep5)", kind: "item", note: "กดใช้เพื่อวาร์ปไป Ocean of the Past" },
+            { name: "Half Potion Red", qty: "10 ขวด", kind: "potion", note: "รางวัลเพิ่มเติม" },
+            { name: "Half Potion Blue", qty: "10 ขวด", kind: "potion", note: "รางวัลเพิ่มเติม" },
+            { name: "Star Card Pack No.5", kind: "card", note: "รางวัลเพิ่มเติม — เปิดสุ่มการ์ด" },
+          ],
+          images: [img(28), img(29)],
+        },
+      ],
+    },
+    {
+      slug: "bonus-chapter",
+      number: 4,
+      title: "ขยะที่หายไป",
+      titleEn: "Bonus Chapter — Find the Missing Item",
+      area: "Underground Dev Room – Dev Room / Lobby",
+      levelHint: "หลังจบ Chapter 3",
+      intro:
+        "บทโบนัสสั้น ๆ ตามหาเงินที่หายไปคืน Guild Clerk Esther แล้วปิดท้ายด้วยการขอลายเซ็นให้ Lead Developer แลกชุดอาวุธ Don Cavalier ครบชุด",
+      steps: [
+        {
+          id: "e4bonus-trash",
+          title: "Waste Basket — ของหาย",
+          npc: "Waste Basket",
+          location: "Underground Dev Room – Dev Room",
+          summary: [
+            "คุย Waste Basket ส่ง Urban Legend Note ก่อนหน้า พร้อมถุงขยะที่ขุดได้ในเขตนี้",
+          ],
+          requirements: [
+            { name: "Urban Legend Note" },
+            { name: "Trash Bag", from: "ขุดที่ Underground Dev Room – Dev Room" },
+          ],
+          rewards: [{ name: "Lost 10,000 Galder", kind: "item" }],
+          images: [img(30)],
+        },
+        {
+          id: "e4bonus-esther",
+          title: "Guild Clerk Esther — เงินที่หายไป",
+          npc: "Guild Clerk Esther → Lead Developer",
+          location: "Underground Dev Room – Dev Room / Lobby",
+          summary: [
+            "คุยได้เฉพาะเวลากลางวัน เอา Lost 10,000 Galder ไปส่ง",
+            "กลับไปหา Lead Developer ที่ Lobby ใช้ของ 3 อย่างเพื่อส่งเควส",
+          ],
+          requirements: [
+            { name: "Lost 10,000 Galder" },
+            { name: "Developer Photo 2", from: "เปิด Weird Box (Aria)" },
+          ],
+          rewards: [{ name: "10,000 Galder", qty: "2 เหรียญ", kind: "money" }],
+          images: [img(31)],
+        },
+        {
+          id: "e4bonus-americano",
+          title: "ขอลายเซ็น Lead Developer",
+          npc: "Lead Developer",
+          location: "Underground Dev Room – Lobby",
+          summary: [
+            "Lead Developer จะขอ Americano อีก 1 แก้ว เพื่อแลกกับลายเซ็น",
+            "ผสมที่ Water Dispenser เหมือนเดิม",
+          ],
+          requirements: [
+            { name: "Americano", qty: "1 แก้ว", from: "ผสมที่ Water Dispenser @ Lobby" },
+            { name: "Pen (UDR)", from: "ตี Robber Mole (Lv.230)" },
+          ],
+          images: [img(32), img(33), img(34)],
+        },
+        {
+          id: "e4bonus-finish",
+          title: "ปิดบทโบนัส — ชุดอาวุธ Don Cavalier",
+          npc: "Lead Developer",
+          location: "Underground Dev Room – Lobby",
+          summary: [
+            "ได้รูปเซ็นชื่อพร้อมการ์ดสะสม",
+            "แลก Don Cavalier Wep Exchange กับ Mint @ Lobby ได้ชุดอาวุธครบ",
+          ],
+          rewards: [
+            { name: "Winter Cooler Card", kind: "card" },
+            { name: "Signed Developer Photo 2", kind: "item" },
+            { name: "Don Cavalier's Sword", kind: "equip", note: "แลกกับ Mint @ Lobby" },
+            { name: "Don Cavalier's Staff", kind: "equip", note: "แลกกับ Mint @ Lobby" },
+            { name: "Don Cavalier's Gun", kind: "equip", note: "แลกกับ Mint @ Lobby" },
+          ],
+          images: [img(35), img(36)],
+        },
+      ],
+    },
+  ],
+};

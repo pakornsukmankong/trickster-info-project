@@ -357,6 +357,44 @@ const ITEM_ICONS: Record<string, string> = {
   "ripped contract": "ripped-contract",
   "restored contract": "restored-contract",
   "city blueprint": "city-blueprint",
+
+  // Episode 4 — Beyond the Veil
+  "merchant mon's bag": "merchant-mons-bag",
+  "emergency key": "julios-key",
+  "nondisclosure agreement": "nondisclosure-agreement",
+  "pen (udr)": "pen-udr",
+  "company mug": "company-mug",
+  americano: "americano",
+  "leader dev card": "leader-dev-card",
+  "merchant mon's leaflet bundle": "merchant-mons-leaflet-bundle",
+  "hot cup noodles": "hot-cup-noodles",
+  "wooden chopsticks": "wooden-chopsticks",
+  "developer's journal": "unknown-old-document",
+  "backup cd": "backup-cd",
+  "instant coffee": "instant-coffee",
+  "green tea bag": "green-tea-bag",
+  capuccino: "cappuccino",
+  "green tea": "green-tea",
+  "antivirus program": "antivirus-program",
+  trash: "trash",
+  "urban legend note": "memo",
+  "delicate key": "delicate-key",
+  "necklace chain": "gold-necklace",
+  "blank check (udr)": "blank-check",
+  "receipt envelope": "envelope-with-photo",
+  "secret letter 1": "magic-sealed-letter",
+  "don cavalier wep exchange": "weapon-ticket",
+  "secret letter 2": "magic-sealed-letter",
+  "don cavalier's hat": "don-cavaliers-hat",
+  "secret letter 3": "magic-sealed-letter",
+  "don cavalier's shield": "don-cavaliers-shield",
+  "hologram port (ep5)": "hologram-port",
+  "lost 10,000 galder": "10-000-galder-coupon",
+  "developer photo 2": "developer-photo-2",
+  "signed developer photo 2": "signed-developer-photo-2",
+  "don cavalier's sword": "don-cavaliers-sword",
+  "don cavalier's staff": "don-cavaliers-staff",
+  "don cavalier's gun": "don-cavaliers-gun",
 };
 
 const MONSTER_ICONS: Record<string, string> = {
@@ -455,6 +493,11 @@ const MONSTER_ICONS: Record<string, string> = {
   "rose worm": "rose-worm",
   rosaspina: "rosaspina",
   "ancient naranjo": "ancient-naranjo",
+
+  // Episode 4 — Beyond the Veil
+  "merchant mon": "merchant-mon",
+  "robber mole": "robber-mole",
+  "win32 worm": "win32-worm",
 };
 
 const NPC_ICONS: Record<string, string> = {
@@ -557,6 +600,17 @@ const NPC_ICONS: Record<string, string> = {
   "don cavalier": "don-cavalier",
   "spirit of nefertiti": "spirit-of-nefertiti",
   "poseidon's blessing": "poseidons-blessing",
+
+  // Episode 4 — Beyond the Veil
+  "coward craven": "coward-craven",
+  "lead developer": "lead-developer",
+  "developer j": "developer-j",
+  "developer h": "developer-h",
+  "developer k": "developer-k",
+  "developer y": "developer-y",
+  "waste basket": "waste-basket",
+  "don danihen": "don-danihen",
+  "guild clerk esther": "guild-clerk-esther",
 };
 
 type Entry = { key: string; file: string; src: string };
