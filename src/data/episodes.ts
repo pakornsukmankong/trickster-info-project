@@ -3,6 +3,7 @@ import { ep0 } from "./ep0";
 import { ep1 } from "./ep1";
 import { part1 } from "./part1";
 import { part2 } from "./part2";
+import { part3 } from "./part3";
 import { ep2 } from "./ep2";
 import { ep3 } from "./ep3";
 import { ep5 } from "./ep5";
@@ -10,7 +11,7 @@ import { ep6 } from "./ep6";
 import { ep4 } from "./ep4";
 
 /** ไกด์ทั้งหมดของเว็บ แบ่งเป็น 2 หมวด: เควสเนื้อเรื่อง (ep) กับเควส Sticker (part) */
-export const episodes: Episode[] = [ep0, ep1, ep2, ep3, ep4, ep5, ep6, part1, part2];
+export const episodes: Episode[] = [ep0, ep1, ep2, ep3, ep4, ep5, ep6, part1, part2, part3];
 
 export const readyEpisodes = episodes.filter((e) => e.status === "ready");
 
