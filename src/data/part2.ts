@@ -27,7 +27,7 @@ export const part2: Episode = {
     "สติกเกอร์ทั้ง 3 เมืองแลกเปลี่ยนกันได้ตามปกติ และทุกภารกิจส่งได้ 5 รอบต่อ 1 NPC",
     "แต่ละเมืองมีเควสให้เลือกมากกว่าจำนวนสติกเกอร์ที่ต้องส่ง เลือกทำเฉพาะเควสที่หาของง่ายได้เลย",
     "NPC หลายตัว (Genius Cochma, Frog Shaman, Lethos) ต้องส่งเควสทางผ่าน 3 รอบก่อน พอส่งรอบที่ 4 ถึงจะได้สติกเกอร์ ให้เผื่อเวลาไว้",
-    "ของที่ต้องเก็บ 25 ชิ้นต่อรอบมีเยอะมากในพาร์ตนี้ แนะนำให้รับเควสแบบมีของติดตัวก่อนแล้วค่อยเก็บ จะเพิ่มอัตราการออกของชิ้นนั้น",
+    "ของที่ต้องเก็บ 25 ชิ้นต่อรอบมีเยอะมากในชุดนี้ แนะนำให้รับเควสแบบมีของติดตัวก่อนแล้วค่อยเก็บ จะเพิ่มอัตราการออกของชิ้นนั้น",
     "อาวุธที่แลกจาก Weapon Ticket / Wep Exchange เป็นของขั้นต้น (LV 80 / 95 / 125) ค่อนข้างไม่มีประโยชน์มาก ทำเพื่อเก็บเนื้อเรื่องกับสมุดนักผจญภัยเป็นหลัก",
   ],
   chapters: [
@@ -39,7 +39,7 @@ export const part2: Episode = {
       area: "Oops Wharf, Gate of Oops Wharf, Wharf Field 1–4, Path to Oops Wharf",
       levelHint: "เริ่มที่ LV 70 (เควส Sticker 60–65)",
       intro:
-        "สายแรกของพาร์ตนี้ คุยกับ Mighty Captain Stan ก่อน แล้วไปหา Skipper Min ที่จะขอ Oops Sticker 7 แผ่น มีเควสให้เลือกทำรวม 12 แผ่น เลือกส่งได้ตามสะดวก",
+        "สายแรกของชุดนี้ คุยกับ Mighty Captain Stan ก่อน แล้วไปหา Skipper Min ที่จะขอ Oops Sticker 7 แผ่น มีเควสให้เลือกทำรวม 12 แผ่น เลือกส่งได้ตามสะดวก",
       steps: [
         {
           id: "p2-oops-hub",
@@ -523,7 +523,7 @@ export const part2: Episode = {
       area: "Ghost Blue Seabed Town – Aquarius, Seabed Field 1–4, Nora Sewer",
       levelHint: "เริ่มที่ LV 95–100",
       intro:
-        "สายสุดท้ายของพาร์ตนี้ Chief Koha ที่ Ghost Blue Seabed Town – Aquarius จะขอ Ghost Sticker 10 แผ่น มีเควสรวม 17 แผ่น เลือกส่งได้ รับเควสจาก Chief Koha ไว้ก่อนแล้วค่อยไปหาสติกเกอร์",
+        "สายสุดท้ายของชุดนี้ Chief Koha ที่ Ghost Blue Seabed Town – Aquarius จะขอ Ghost Sticker 10 แผ่น มีเควสรวม 17 แผ่น เลือกส่งได้ รับเควสจาก Chief Koha ไว้ก่อนแล้วค่อยไปหาสติกเกอร์",
       steps: [
         {
           id: "p2-ghost-hub",

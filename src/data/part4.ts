@@ -10,7 +10,7 @@ export const part4: Episode = {
   titleEn: "Black Swamp",
   levelHint: "LV 140–150 ขึ้นไป",
   tagline:
-    "สติกเกอร์ชุดที่สี่ในหนองน้ำดำของ Pastor Tau เขตนี้ของดรอปง่ายกว่า Rose Garden มาก ทำได้เรื่อย ๆ ไม่ยากเท่าพาร์ตก่อน",
+    "สติกเกอร์ชุดที่สี่ในหนองน้ำดำของ Pastor Tau เขตนี้ของดรอปง่ายกว่า Rose Garden มาก ทำได้เรื่อย ๆ ไม่ยากเท่าเขตก่อน",
   areas: [
     "Swamp Town – Carbigal",
     "Swamp Field 1–6",
