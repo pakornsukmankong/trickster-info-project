@@ -90,6 +90,58 @@ function NavDropdown({
   );
 }
 
+/** ส่วนพับ/กางในเมนูมือถือ ใช้ทั้งสำหรับ EP และแผนที่ Sticker */
+function MobileAccordionSection({
+  label,
+  items,
+  defaultOpen,
+  isActive,
+  onNavigate,
+}: {
+  label: string;
+  items: { href: string; label: string; sub?: string }[];
+  defaultOpen: boolean;
+  isActive: (href: string) => boolean;
+  onNavigate: () => void;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+
+  return (
+    <div className="mt-1">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-[11px] font-600 uppercase tracking-wide text-sea-700/70"
+      >
+        {label}
+        <svg
+          viewBox="0 0 12 12"
+          className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`}
+          fill="none"
+        >
+          <path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      </button>
+
+      {open &&
+        items.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            onClick={onNavigate}
+            className={`block rounded-lg px-3 py-2 text-sm ${
+              isActive(item.href) ? "bg-coral-500 text-white" : "text-sea-700"
+            }`}
+          >
+            {item.label}
+            {item.sub && <span className="text-[12px] opacity-80"> — {item.sub}</span>}
+          </Link>
+        ))}
+    </div>
+  );
+}
+
 export default function SiteHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -169,37 +221,21 @@ export default function SiteHeader() {
             หน้าแรก
           </Link>
 
-          <p className="mt-2 px-3 text-[11px] font-600 uppercase tracking-wide text-sea-700/70">
-            เควสเนื้อเรื่อง
-          </p>
-          {epItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className={`block rounded-lg px-3 py-2 text-sm ${
-                isActive(item.href) ? "bg-coral-500 text-white" : "text-sea-700"
-              }`}
-            >
-              {item.label} <span className="text-[12px] opacity-80">— {item.sub}</span>
-            </Link>
-          ))}
+          <MobileAccordionSection
+            label="เควสเนื้อเรื่อง"
+            items={epItems}
+            defaultOpen={isEpActive}
+            isActive={isActive}
+            onNavigate={() => setMobileOpen(false)}
+          />
 
-          <p className="mt-2 px-3 text-[11px] font-600 uppercase tracking-wide text-sea-700/70">
-            แผนที่ Sticker
-          </p>
-          {partItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setMobileOpen(false)}
-              className={`block rounded-lg px-3 py-2 text-sm ${
-                isActive(item.href) ? "bg-coral-500 text-white" : "text-sea-700"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
+          <MobileAccordionSection
+            label="แผนที่ Sticker"
+            items={partItems}
+            defaultOpen={isPartActive}
+            isActive={isActive}
+            onNavigate={() => setMobileOpen(false)}
+          />
 
           <div className="mt-2 border-t border-sand-200 pt-2">
             {tailLinks.map((item) => (
