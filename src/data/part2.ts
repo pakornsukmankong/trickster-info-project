@@ -7,7 +7,7 @@ export const part2: Episode = {
   group: "part",
   number: 2,
   title: "Sticker Adventure Book — สายทะเล",
-  titleEn: "Part 2 — Oops Wharf, Mermaid Palace, Ghost Blue",
+  titleEn: "Oops Wharf, Mermaid Palace, Ghost Blue",
   levelHint: "LV 70 ขึ้นไป",
   tagline:
     "สติกเกอร์ชุดที่สอง ไล่จากท่าเรือผีสิงลงไปวังเงือกจนถึงเมืองใต้ทะเล Ghost Blue เควสยาวขึ้นมาก หลาย NPC ต้องส่งเควสทางผ่าน 3 รอบก่อนถึงจะเริ่มได้สติกเกอร์",

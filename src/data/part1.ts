@@ -7,7 +7,7 @@ export const part1: Episode = {
   group: "part",
   number: 1,
   title: "Sticker Adventure Book",
-  titleEn: "Part 1 — Desert Beach, Poppuri Dungeon, Relics Town",
+  titleEn: "Desert Beach, Poppuri Dungeon, Relics Town",
   levelHint: "LV 25 ขึ้นไป",
   tagline:
     "เควสสะสมสติกเกอร์ชุดแรก ไล่จากเมืองทะเลทรายไปถ้ำ Poppuri จนถึงเมืองซากโบราณ เน้นส่งของเป็นหลัก ทุก NPC ส่งได้ 5 รอบ",
@@ -387,7 +387,7 @@ export const part1: Episode = {
       area: "Relics Town – Azteca, Caballa Relics Fields 1–4, Caballa Relics Dungeons",
       levelHint: "เริ่มที่ LV 55",
       intro:
-        "สายยาวที่สุดของ Part 1 ศูนย์กลางคือ Fortune Teller ที่ Relics Town – Azteca ขอ Caballa Sticker 10 แผ่น รวมทั้งหมด 12 เควส เหมือนบังคับทำให้ครบ ทุกภารกิจส่ง 5 รอบต่อ 1 NPC",
+        "สายยาวที่สุดของ Desert Beach ศูนย์กลางคือ Fortune Teller ที่ Relics Town – Azteca ขอ Caballa Sticker 10 แผ่น รวมทั้งหมด 12 เควส เหมือนบังคับทำให้ครบ ทุกภารกิจส่ง 5 รอบต่อ 1 NPC",
       steps: [
         {
           id: "p1-relics-hub",
@@ -576,7 +576,7 @@ export const part1: Episode = {
         },
         {
           id: "p1-relics-finish",
-          title: "ปิด Part 1 — รับ Weapon Ticket B",
+          title: "ปิด Desert Beach — รับ Weapon Ticket B",
           npc: "Mint",
           location: "Azteca",
           summary: ["เป็นอันจบภารกิจ พร้อมรับรางวัล Weapon Ticket B", "แลกของกับ Mint ใน Azteca ได้"],

@@ -1537,7 +1537,7 @@ const part1Defs: ItemDef[] = [
     name: "Weapon Ticket B",
     kind: "item",
     description: "ตั๋วแลกอาวุธขั้นต้น LV 65",
-    howToObtain: "รางวัลปิด Part 1",
+    howToObtain: "รางวัลปิด Desert Beach",
     usedIn:
       "แลกกับ Mint @ Azteca — Edge Epoch Sword / Edge Dirk / Precise Metal Gun / Sun Wood Rod, และหมวกด้วย Hat Ticket B",
   },

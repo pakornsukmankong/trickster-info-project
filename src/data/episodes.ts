@@ -61,7 +61,18 @@ export function stepIds(episode: Episode) {
   return episode.chapters.flatMap((c) => c.steps.map((s) => s.id));
 }
 
+/** ชื่อโซนสั้น ๆ ใช้แทน "Part N" ในป้ายกำกับของแต่ละไกด์ Sticker */
+const partZoneName: Record<string, string> = {
+  "part-1": "Desert Beach",
+  "part-2": "Oops Wharf",
+  "part-3": "Rose Garden",
+  "part-4": "Black Swamp",
+  "part-5": "Snow Hill",
+  "part-6": "Techichi Volcano",
+  "part-7": "Tapasco Volcano",
+};
+
 /** ชื่อสั้นสำหรับติดป้ายในหน้าไอเทม/มอนสเตอร์ */
 export const episodeLabel: Record<string, string> = Object.fromEntries(
-  episodes.map((e) => [e.slug, e.group === "part" ? `Part ${e.number}` : `EP ${e.number}`])
+  episodes.map((e) => [e.slug, e.group === "part" ? partZoneName[e.slug] ?? e.slug : `EP ${e.number}`])
 );

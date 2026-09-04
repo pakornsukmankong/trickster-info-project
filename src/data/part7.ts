@@ -7,7 +7,7 @@ export const part7: Episode = {
   group: "part",
   number: 7,
   title: "สติกเกอร์ภูเขาไฟทาปาสโก",
-  titleEn: "Part 7 — Tapasco Volcano",
+  titleEn: "Tapasco Volcano",
   levelHint: "LV 230–235 ขึ้นไป",
   tagline:
     "สติกเกอร์ชุดสุดท้ายที่ Tapasco Volcano จบแล้วคือปิดเนื้อเรื่องทั้งหมดของเกม เขตนี้ของขุดยากขึ้น+ลึกขึ้น ควรเปลี่ยนไปใช้ Speed Drill 180",

@@ -7,7 +7,7 @@ export const part4: Episode = {
   group: "part",
   number: 4,
   title: "สติกเกอร์หนองน้ำดำ",
-  titleEn: "Part 4 — Black Swamp",
+  titleEn: "Black Swamp",
   levelHint: "LV 140–150 ขึ้นไป",
   tagline:
     "สติกเกอร์ชุดที่สี่ในหนองน้ำดำของ Pastor Tau เขตนี้ของดรอปง่ายกว่า Rose Garden มาก ทำได้เรื่อย ๆ ไม่ยากเท่าพาร์ตก่อน",
@@ -362,7 +362,7 @@ export const part4: Episode = {
           location: "Swamp Town – Carbigal",
           summary: [
             "ส่ง Dream Interpretation กลับไปให้ Little Chagan พร้อมให้ตรวจ Adventurer's Book",
-            "เป็นอันจบเขต Swamp Field — เขาจะพูดถึงเควสค้างอีก 1 อัน (โรงงานขนมเมืองหิมะ) ให้ไปทำต่อใน Part ถัดไป",
+            "เป็นอันจบเขต Swamp Field — เขาจะพูดถึงเควสค้างอีก 1 อัน (โรงงานขนมเมืองหิมะ) ให้ไปทำต่อใน Snow Hill",
           ],
           requirements: [{ name: "Dream Interpretation" }, { name: "Adventurer's Book", note: "ให้ Little Chagan ตรวจ" }],
           rewards: [{ name: "Weapon Exchange Ticket G", kind: "item" }],

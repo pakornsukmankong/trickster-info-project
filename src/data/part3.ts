@@ -7,7 +7,7 @@ export const part3: Episode = {
   group: "part",
   number: 3,
   title: "สติกเกอร์สวนกุหลาบ",
-  titleEn: "Part 3 — Rose Garden",
+  titleEn: "Rose Garden",
   levelHint: "LV 120–125 ขึ้นไป",
   tagline:
     "สติกเกอร์ชุดที่สามในสวนกุหลาบของ Rosaline Gracia เควสยาวและซับซ้อนกว่าที่ผ่านมามาก แตกสายไปถึงปราสาทแวมไพร์ ปิดท้ายด้วยความลับของ Rosaline เอง",

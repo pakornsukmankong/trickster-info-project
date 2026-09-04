@@ -15,7 +15,7 @@ const GROUPS: { key: GuideGroup; heading: string; blurb: string }[] = [
   },
   {
     key: "part",
-    heading: "เควส Sticker (Part)",
+    heading: "เควส Sticker",
     blurb: "เควสสะสมสติกเกอร์ เน้นส่งของ ทำหลังจากผ่านเควสเนื้อเรื่องของเมืองนั้นแล้ว",
   },
 ];
@@ -48,7 +48,7 @@ export default function Home() {
             href="/part-1"
             className="rounded-xl border border-sand-300 bg-white px-5 py-2.5 font-display text-sm font-600 text-sea-700 transition hover:bg-sand-100"
           >
-            ดูเควส Sticker Part 1 (Lv.25)
+            ดูเควส Sticker Desert Beach (Lv.25)
           </Link>
         </div>
 

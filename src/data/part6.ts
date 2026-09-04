@@ -7,7 +7,7 @@ export const part6: Episode = {
   group: "part",
   number: 6,
   title: "สติกเกอร์ภูเขาไฟเทชิชิ",
-  titleEn: "Part 6 — Techichi Volcano",
+  titleEn: "Techichi Volcano",
   levelHint: "LV 200–210 ขึ้นไป",
   tagline:
     "สติกเกอร์ชุดที่หกที่ Techichi Volcano เขตนี้ของขุดยากขึ้น+ลึกขึ้น ควรเริ่มเปลี่ยนไปใช้ Speed Drill 180",

@@ -7,7 +7,7 @@ export const part5: Episode = {
   group: "part",
   number: 5,
   title: "สติกเกอร์เนินหิมะ",
-  titleEn: "Part 5 — Snow Hill",
+  titleEn: "Snow Hill",
   levelHint: "LV 160–170 ขึ้นไป",
   tagline:
     "สติกเกอร์ชุดที่ห้าที่ Snow Hill เขตนี้ของขุดยากขึ้น+ลึกขึ้น ควรเปลี่ยนไปใช้ Speed Drill 120 ก่อนเริ่ม",
