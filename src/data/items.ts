@@ -6260,6 +6260,263 @@ const part6Defs: ItemDef[] = [
   },
 ];
 
+/** ไอเทมที่ปรากฏใน Part 7 — Tapasco Volcano (เนื้อเรื่องสุดท้ายของเกม) */
+const part7Defs: ItemDef[] = [
+  {
+    name: "Tapasco Sticker",
+    kind: "item",
+    description: "สติกเกอร์ประจำเขต Tapasco Volcano แลกเปลี่ยนกันได้ตามปกติ",
+    howToObtain: "รางวัลจากเควสย่อยรอบ Tapasco Volcano (รวมได้ 14 แผ่น)",
+    usedIn: "ส่ง Clerk Z. Smith @ Tapasco Field 1 – Net of Lava 12 แผ่น",
+  },
+  {
+    name: "Diamond",
+    kind: "item",
+    description: "เพชร",
+    howToObtain: "ขุดรอบเขต Tapasco Volcan Fields",
+    usedIn: "ส่ง Mighty Captain Stan 10 เม็ด",
+  },
+  {
+    name: "Ruby",
+    kind: "item",
+    description: "ทับทิม",
+    howToObtain: "ขุดรอบเขต Black Ash Dungeon / Tapasco Volcan Fields",
+    usedIn: "ส่ง Mighty Captain Stan 10 เม็ด",
+  },
+  {
+    name: "Sapphire",
+    kind: "item",
+    description: "ไพลิน",
+    howToObtain: "ขุดรอบเขต Snow Hill Fields / Black Swamp",
+    usedIn: "ส่ง Mighty Captain Stan 10 เม็ด",
+  },
+  {
+    name: "Freezer Ticket",
+    kind: "item",
+    description: "ตั๋วห้องเย็น",
+    howToObtain: "รางวัลจากเควส Mighty Captain Stan",
+    usedIn: "ส่ง Ancient Polar Bear 1 ใบ",
+  },
+  {
+    name: "Tapasco Pepper",
+    kind: "item",
+    description: "พริกทาปาสโก",
+    howToObtain: "ขุดรอบเขต Tapasco Field",
+    usedIn: "ส่ง Cluck Cluck Warrior 10 อัน / ส่ง Burner 10 อัน",
+  },
+  {
+    name: "Fire Flower",
+    kind: "item",
+    description: "ดอกไม้ไฟ",
+    howToObtain: "ดรอปจาก Fire Moth (Lv.289)",
+    usedIn: "ส่ง Cluck Cluck Warrior 10 อัน",
+  },
+  {
+    name: "Salt Jar",
+    kind: "item",
+    description: "โหลเกลือ",
+    howToObtain: "ขุดรอบเขต Tapasco Field",
+    usedIn: "ส่ง Sophia 15 อัน / ส่ง Monkey T 5 อัน",
+  },
+  {
+    name: "Roasted Sweet Potato",
+    kind: "item",
+    description: "มันเผา",
+    howToObtain: "ขุดรอบเขต Tapasco Field",
+    usedIn: "ส่ง Monkey T 15 อัน",
+  },
+  {
+    name: "Volcano Water",
+    kind: "item",
+    description: "น้ำจากภูเขาไฟ",
+    howToObtain: "ดรอปจาก Dekumanus (Lv.312)",
+    usedIn: "ส่ง Monkey T 5 ขวด",
+  },
+  {
+    name: "Orc's Chain",
+    kind: "item",
+    description: "โซ่ของออร์ค",
+    howToObtain: "ดรอปจาก Regent Orc (Lv.347)",
+    usedIn: "ส่ง Officer Tera 15 อัน",
+  },
+  {
+    name: "Spicy Egg",
+    kind: "item",
+    description: "ไข่รสเผ็ด",
+    howToObtain: "ขุดรอบเขต Tapasco Field",
+    usedIn: "ส่ง Vinosh 10 อัน",
+  },
+  {
+    name: "Pupa of Tiger Moth",
+    kind: "item",
+    description: "ดักแด้ผีเสื้อเสือ",
+    howToObtain: "ขุดรอบเขต Tapasco Field",
+    usedIn: "ส่ง Vinosh 10 อัน",
+  },
+  {
+    name: "Roll Cake",
+    kind: "item",
+    description: "เค้กโรล",
+    howToObtain: "ดรอปจาก Regent Orc (Lv.347)",
+    usedIn: "ส่ง Dorothy 15 อัน",
+  },
+  {
+    name: "Black Suspenders",
+    kind: "item",
+    description: "สายเอี๊ยมสีดำ",
+    howToObtain: "ดรอปจาก Reggae Orc (Lv.351)",
+    usedIn: "ส่ง Inventor Gale 10 อัน",
+  },
+  {
+    name: "Red Fire",
+    kind: "item",
+    description: "เปลวไฟสีแดง",
+    howToObtain: "ดรอปจาก Red Salamander (Lv.334)",
+    usedIn: "ส่ง Burner 10 อัน",
+  },
+  {
+    name: "Blue Fire",
+    kind: "item",
+    description: "เปลวไฟสีฟ้า",
+    howToObtain: "ดรอปจาก Blue Salamander (Lv.339)",
+    usedIn: "ส่ง Burner 10 อัน",
+  },
+  {
+    name: "Absolute Ring",
+    kind: "item",
+    description: "แหวนสมบูรณ์แบบ",
+    howToObtain: "ดรอปจาก Fire Golem (Lv.357)",
+    usedIn: "ส่ง Clerk Z. Smith 1 วง",
+  },
+  {
+    name: "Incomplete Trickster Ring",
+    kind: "item",
+    description: "แหวน Trickster ที่ยังไม่สมบูรณ์",
+    howToObtain: "รางวัลจากการส่ง Absolute Ring ให้ Clerk Z. Smith",
+    usedIn: "เอาไปส่ง Blacksmith Marx",
+  },
+  {
+    name: "Hot Iron",
+    kind: "item",
+    description: "เหล็กร้อน",
+    howToObtain: "ขุดรอบเขต Tapasco Field",
+    usedIn: "ส่ง Blacksmith Marx 2 อัน",
+  },
+  {
+    name: "Whetstone",
+    kind: "item",
+    description: "หินลับมีด",
+    howToObtain: "ขุดรอบเขต Tapasco Field",
+    usedIn: "ส่ง Blacksmith Marx 2 อัน",
+  },
+  {
+    name: "Slag Orb",
+    kind: "item",
+    description: "ลูกแก้วขี้ตะกรัน",
+    howToObtain: "ดรอปจาก Fire Golem (Lv.357) / Punisher Fire Golem",
+    usedIn: "ส่ง Blacksmith Marx 2 ก้อน",
+  },
+  {
+    name: "Polished Trickster Ring",
+    kind: "equip",
+    description: "แหวน Trickster ที่ขัดเงาแล้ว",
+    howToObtain: "รางวัลจากเควส Blacksmith Marx",
+    usedIn: "เอาไปส่ง Blacksmith Marx พร้อม Hunter's Certificate ปิดเนื้อเรื่องทั้งหมด",
+  },
+  {
+    name: "Hunter's Certificate",
+    kind: "item",
+    description: "ใบรับรองนักล่า",
+    howToObtain: "รางวัลจากเควส Hunter Master (จัดการ Fire Moth 30 ตัว รอบเดียว)",
+    usedIn: "เอาไปส่ง Blacksmith Marx พร้อม Polished Trickster Ring ปิดเนื้อเรื่องทั้งหมด",
+  },
+  {
+    name: "Half Pink Potion",
+    kind: "potion",
+    description: "ยาสีชมพูครึ่งขวด",
+    howToObtain: "รางวัลจากการส่ง Tapasco Sticker ครบให้ Clerk Z. Smith",
+    usedIn: "ใช้ฟื้นฟู",
+  },
+  {
+    name: "Half Blue Potion",
+    kind: "potion",
+    description: "ยาสีฟ้าครึ่งขวด",
+    howToObtain: "รางวัลจากการส่ง Tapasco Sticker ครบให้ Clerk Z. Smith",
+    usedIn: "ใช้ฟื้นฟู",
+  },
+  {
+    name: "Weapon Exchange Ticket J",
+    kind: "item",
+    description: "ตั๋วแลกอาวุธขั้นต้น LV 275",
+    howToObtain: "รางวัลปิดเนื้อเรื่องเขต Tapasco Volcano",
+    usedIn:
+      "แลกกับ Mint @ Gate of Tapasco Volcano — Edge Broadsword / Edge Khanjar / Solar Arc Stick / Precise MJS-G5, หมวกใช้ Hat Exchange Coupon J อย่างละ 5 ใบ",
+  },
+  {
+    name: "Theme Spa Capsule",
+    kind: "item",
+    description: "แคปซูลสุ่มของจาก Tapasco Theme Spa",
+    howToObtain: "ซื้อจาก Shopkeeper Laic @ Gate of Tapasco Theme Spa",
+    usedIn: "เปิดสุ่มได้ Worldly Cure / Twinkle Potion / 1,000 Galder Coupon / เพ็ท Baby Coolem",
+  },
+  {
+    name: "Worldly Cure",
+    kind: "potion",
+    description: "ยาแก้พิษสารพัด",
+    howToObtain: "เปิดจาก Theme Spa Capsule",
+    usedIn: "ใช้รักษาอาการผิดปกติ",
+  },
+  {
+    name: "Twinkle Potion",
+    kind: "potion",
+    description: "ยาประกายแวววาว",
+    howToObtain: "เปิดจาก Theme Spa Capsule",
+    usedIn: "ใช้ตามคำอธิบายไอเทม",
+  },
+  {
+    name: "Baby Coolem",
+    kind: "pet",
+    description: "น้องชายของ Giant Coolem ที่มาตามหาพี่จนกลายเป็นมาสคอตของ Tapasco Theme Spa",
+    howToObtain: "เปิดจาก Theme Spa Capsule (สุ่ม)",
+    usedIn: "เลี้ยงเป็นเพ็ท",
+  },
+  {
+    name: "Therma Spa Coupon",
+    kind: "item",
+    description: "คูปองสปาความร้อน",
+    howToObtain: "ดรอปจาก Funky Orc (Lv.343)",
+    usedIn: "ส่ง Eliza Bath 5 อัน",
+  },
+  {
+    name: "Tapasco Body Wash",
+    kind: "item",
+    description: "ครีมอาบน้ำ Tapasco",
+    howToObtain: "รางวัลจากเควส Eliza Bath",
+    usedIn: "ส่ง Skipper Min พร้อม Exfoliation Towel",
+  },
+  {
+    name: "Red Leather",
+    kind: "item",
+    description: "หนังสีแดง",
+    howToObtain: "ดรอปจาก Red Salamander (Lv.334)",
+    usedIn: "ส่ง Al-Hauri 5 อัน",
+  },
+  {
+    name: "Blue Leather",
+    kind: "item",
+    description: "หนังสีฟ้า",
+    howToObtain: "ดรอปจาก Blue Salamander (Lv.339)",
+    usedIn: "ส่ง Al-Hauri 5 อัน",
+  },
+  {
+    name: "Exfoliation Towel",
+    kind: "item",
+    description: "ผ้าขัดตัว",
+    howToObtain: "รางวัลจากเควส Al-Hauri",
+    usedIn: "ส่ง Skipper Min พร้อม Tapasco Body Wash (ส่ง 5 รอบ)",
+  },
+];
+
 export const ep0Items = withEpisode("ep0")(ep0Defs);
 export const ep1Items = withEpisode("ep1")(ep1Defs);
 export const part1Items = withEpisode("part-1")(part1Defs);
@@ -6272,6 +6529,7 @@ export const part3Items = withEpisode("part-3")(part3Defs);
 export const part4Items = withEpisode("part-4")(part4Defs);
 export const part5Items = withEpisode("part-5")(part5Defs);
 export const part6Items = withEpisode("part-6")(part6Defs);
+export const part7Items = withEpisode("part-7")(part7Defs);
 export const ep4Items = withEpisode("ep4")(ep4Defs);
 export const allItems: GameItem[] = [
   ...ep0Items,
@@ -6287,4 +6545,5 @@ export const allItems: GameItem[] = [
   ...part4Items,
   ...part5Items,
   ...part6Items,
+  ...part7Items,
 ];

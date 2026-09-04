@@ -663,6 +663,42 @@ const ITEM_ICONS: Record<string, string> = {
   "pink lace": "pink-lace",
   "green lace": "green-lace",
   "blue lace": "blue-lace",
+
+  // Part 7 — Tapasco Volcano
+  "tapasco sticker": "desert-sticker",
+  diamond: "diamond",
+  ruby: "ruby",
+  sapphire: "sapphire",
+  "freezer ticket": "freezer-ticket",
+  "tapasco pepper": "tapasco-pepper",
+  "fire flower": "fire-flower",
+  "salt jar": "salt-jar",
+  "roasted sweet potato": "roasted-sweet-potato",
+  "orc's chain": "orcs-chain",
+  "spicy egg": "spicy-egg",
+  "pupa of tiger moth": "pupa-of-tiger-moth",
+  "roll cake": "roll-cake",
+  "black suspenders": "black-suspenders",
+  "red fire": "red-fire",
+  "blue fire": "blue-fire",
+  "absolute ring": "absolute-ring",
+  "incomplete trickster ring": "gold-ring",
+  "hot iron": "heated-iron-piece",
+  whetstone: "whetstone",
+  "slag orb": "slag-orb",
+  "polished trickster ring": "gold-ring",
+  "hunter's certificate": "scroll",
+  "half pink potion": "pink-potion-a",
+  "half blue potion": "blue-potion-c",
+  "weapon exchange ticket j": "weapon-ticket",
+  "theme spa capsule": "theme-spa-capsule",
+  "worldly cure": "worldly-cure",
+  "twinkle potion": "twinkle-potion",
+  "therma spa coupon": "therma-spa-coupon",
+  "tapasco body wash": "tapasco-body-wash",
+  "red leather": "red-leather",
+  "blue leather": "blue-leather",
+  "exfoliation towel": "exfoliation-towel",
 };
 
 const MONSTER_ICONS: Record<string, string> = {
@@ -848,6 +884,15 @@ const MONSTER_ICONS: Record<string, string> = {
   "doom claw": "doom-claw",
   "ash soldier": "ash-soldier",
   "malefic matron": "malefic-matron",
+
+  // Part 7
+  "fire moth": "fire-moth",
+  "red salamander": "red-salamander",
+  "blue salamander": "blue-salamander",
+  "regent orc": "regent-orc",
+  "reggae orc": "reggae-orc",
+  "funky orc": "funky-orc",
+  "fire golem": "fire-golem",
 };
 
 const NPC_ICONS: Record<string, string> = {
@@ -1028,6 +1073,12 @@ const NPC_ICONS: Record<string, string> = {
   "al-hauri": "al-hauri",
   "pharaoh boy": "pharaoh-boy",
   "match girl annie": "match-girl-annie",
+
+  // Part 7
+  burner: "burner",
+  "shopkeeper laic": "shopkeeper-laic",
+  "eliza bath": "eliza-bath",
+  "hunter master": "hunter-master",
 };
 
 type Entry = { key: string; file: string; src: string };
