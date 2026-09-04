@@ -522,6 +522,21 @@ const ITEM_ICONS: Record<string, string> = {
   "rosaline's story book (a)": "rosalines-story-book-a",
   "rose of love": "red-rose-of-passion",
   "weapon exchange ticket f": "weapon-ticket",
+
+  // Part 4 — Black Swamp
+  "swamp sticker": "desert-sticker",
+  "mingo jelly": "character-rubber",
+  "swamp worms": "ground-earthworm",
+  "viscous saliva": "thick-saliva",
+  "grass-leaf doll": "grass-leaf-doll",
+  "arachne's earrings": "arachnes-earrings",
+  "tsetsech honey": "honey",
+  "stoor worm's horn": "stoor-worms-horn",
+  "feeler eyes": "tentacled-eye",
+  "flower of revival": "flower-of-revival",
+  "flower tea": "ginseng-tea",
+  "dream interpretation": "envelope-with-photo",
+  "weapon exchange ticket g": "weapon-ticket",
 };
 
 const MONSTER_ICONS: Record<string, string> = {
@@ -659,6 +674,23 @@ const MONSTER_ICONS: Record<string, string> = {
   "bone warrior": "bone-warrior",
   "captain charman": "captain-charman",
   "beast vincento": "beast-vincento",
+
+  // Part 4
+  "electric snail": "electric-snail",
+  "walking tadpole": "walking-tadpole",
+  "chameleon frog": "chameleon-frog",
+  mingo: "mingo",
+  monkya: "monkya",
+  "mud bigfoot": "mud-bigfoot",
+  "swamp shark": "swamp-shark",
+  arachne: "arachne",
+  slithis: "slithis",
+  "cobra flower": "cobra-flower",
+  "purple worm": "purple-worm",
+  myconid: "myconid",
+  "lotus wormhole": "lotus-wormhole",
+  "stoor worm": "stoor-worm",
+  "slug g": "slug-g",
 };
 
 const NPC_ICONS: Record<string, string> = {
@@ -804,6 +836,14 @@ const NPC_ICONS: Record<string, string> = {
   "warrior kei": "warrior-kei",
   "princess rosetta": "princess-rosetta",
   "prince stephano": "prince-stephano",
+
+  // Part 4
+  "pastor tau": "pastor-tau",
+  "cluck cluck warrior": "cluck-cluck-warrior",
+  "frog prince": "frog-prince",
+  "madam sarah": "madam-sarah",
+  "swampy suu": "swampy-suu",
+  "little chagan": "little-chagan",
 };
 
 type Entry = { key: string; file: string; src: string };

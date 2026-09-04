@@ -5103,6 +5103,270 @@ const part3Defs: ItemDef[] = [
   },
 ];
 
+/** ไอเทมที่ปรากฏใน Part 4 — Black Swamp */
+const part4Defs: ItemDef[] = [
+  {
+    name: "Snail Dish",
+    kind: "item",
+    description: "จานอาหารทำจากหอยทาก",
+    howToObtain: "ดรอปจาก Electric Snail (Lv.164)",
+    usedIn: "ส่ง Favian 50 จาน",
+  },
+  {
+    name: "Swamp Sticker",
+    kind: "item",
+    description: "สติกเกอร์ประจำเขต Black Swamp แลกเปลี่ยนกันได้ตามปกติ",
+    howToObtain: "รางวัลจากเควสย่อยรอบ Black Swamp (รวมได้ 19 แผ่น)",
+    usedIn: "ส่ง Pastor Tau @ Swamp Town – Carbigal 13 แผ่น",
+  },
+  {
+    name: "Candy Light Bulb",
+    kind: "item",
+    description: "หลอดไฟลูกอมแปลกตา",
+    howToObtain: "ดรอปจาก Electric Snail (Lv.164)",
+    usedIn: "ส่ง Genius Cochma 15 อัน",
+  },
+  {
+    name: "Snail Shell",
+    kind: "item",
+    description: "เปลือกหอยทาก",
+    howToObtain: "ดรอปจาก Electric Snail (Lv.164)",
+    usedIn: "ส่ง Genius Cochma 25 อัน",
+  },
+  {
+    name: "Pump",
+    kind: "item",
+    description: "ปั๊มลมขนาดเล็ก",
+    howToObtain: "ดรอปจาก Walking Tadpole (Lv.166) @ Swamp Field 1 – Black Hole",
+    usedIn: "ส่ง Genius Cochma 25 อัน",
+  },
+  {
+    name: "Colored Paper",
+    kind: "item",
+    description: "กระดาษสีสันสดใส",
+    howToObtain: "ดรอปจาก Chameleon Frog (Lv.169) @ Swamp Field 2 / 4",
+    usedIn: "ส่ง Genius Cochma 25 อัน",
+  },
+  {
+    name: "Mingo Jelly",
+    kind: "item",
+    description: "เยลลี่ของ Mingo เนื้อเหนียวหนึบ",
+    howToObtain: "ดรอปจาก Mingo (Lv.171) @ Swamp Field 3 – Maze of Forest",
+    usedIn: "ส่ง Genius Cochma 25 อัน",
+  },
+  {
+    name: "Swamp Worms",
+    kind: "item",
+    description: "หนอนพบได้ทั่วไปในหนองน้ำสีดำ",
+    howToObtain: "ขุดรอบเขต Swamp Field",
+    usedIn: "ส่ง Kristoffer J. 25 ตัว และ Cluck Cluck Warrior 25 ตัว",
+  },
+  {
+    name: "Viscous Saliva",
+    kind: "item",
+    description: "น้ำลายเหนียวหนืด",
+    howToObtain: "ดรอปจาก Mud Bigfoot (Lv.180) @ Swamp Field 6 – Lake of Illusion",
+    usedIn: "ส่ง Kristoffer J. 25 อัน",
+  },
+  {
+    name: "Candy Light Bulb (Bag)",
+    kind: "item",
+    description: "หลอดไฟลูกอมบรรจุถุง",
+    howToObtain: "ดรอปจาก Electric Snail (Lv.164)",
+    usedIn: "ส่ง Monkey T 15 อัน",
+  },
+  {
+    name: "Grass-Leaf Doll",
+    kind: "item",
+    description: "ตุ๊กตาใบหญ้า",
+    howToObtain: "ขุดรอบเขต Swamp Field",
+    usedIn: "ส่ง Cluck Cluck Warrior 5 อัน",
+  },
+  {
+    name: "Swamp Leaf",
+    kind: "item",
+    description: "ใบไม้จากหนองน้ำดำ",
+    howToObtain: "ขุดรอบเขต Swamp Field",
+    usedIn: "ส่ง Cluck Cluck Warrior 25 อัน",
+  },
+  {
+    name: "White Ball",
+    kind: "item",
+    description: "ลูกบอลสีขาว",
+    howToObtain: "ดรอปจาก Monkya (Lv.173) @ Swamp Field 4 – Dark Omen",
+    usedIn: "ส่ง Princess Rosetta 25 อัน",
+  },
+  {
+    name: "Gold Colored Paint",
+    kind: "item",
+    description: "สีทองอร่าม",
+    howToObtain: "ดรอปจาก Mingo (Lv.171) @ Swamp Field 3 – Maze of Forest",
+    usedIn: "ส่ง Princess Rosetta 5 อัน",
+  },
+  {
+    name: "Golden Ball",
+    kind: "item",
+    description: "ลูกบอลทองคำ",
+    howToObtain: "ขุดรอบเขต Swamp Field",
+    usedIn: "ส่ง Frog Prince 5 อัน",
+  },
+  {
+    name: "Arachne's Earrings",
+    kind: "item",
+    description: "ต่างหูของ Arachne",
+    howToObtain: "ดรอปจาก Arachne (Lv.178)",
+    usedIn: "ส่ง Vinosh 50 อัน",
+  },
+  {
+    name: "Swamp Shark Leather",
+    kind: "item",
+    description: "หนังของ Swamp Shark",
+    howToObtain: "ดรอปจาก Swamp Shark (Lv.176) @ Swamp Field 3 / 5",
+    usedIn: "ส่ง Monkey T 15 อัน",
+  },
+  {
+    name: "Halo",
+    kind: "item",
+    description: "รัศมีเรืองแสง",
+    howToObtain: "ดรอปจาก Lotus Wormhole (Lv.219) @ Swamp Dungeon 4 / 5",
+    usedIn: "ส่ง Farmer Tsetsech 15 อัน",
+  },
+  {
+    name: "Tsetsech Honey",
+    kind: "item",
+    description: "น้ำผึ้งสูตรลับของ Farmer Tsetsech",
+    howToObtain: "รางวัลจากเควส Farmer Tsetsech 10 อัน",
+    usedIn: "ส่ง Madam Sarah และ Vagabond Eloy แบบละ 5 อัน",
+  },
+  {
+    name: "Poison Spore",
+    kind: "item",
+    description: "สปอร์พิษ",
+    howToObtain: "ดรอปจาก Myconid (Lv.208) @ Swamp Dungeon 1 / 2",
+    usedIn: "ส่ง Farmer Tsetsech 25 อัน",
+  },
+  {
+    name: "Swamp Shark Teeth",
+    kind: "item",
+    description: "ฟันของ Swamp Shark",
+    howToObtain: "ดรอปจาก Swamp Shark (Lv.176) @ Swamp Field 3 / 5",
+    usedIn: "ส่ง Lethos 5 อัน",
+  },
+  {
+    name: "Lotus Fruit",
+    kind: "item",
+    description: "ผลบัวหอมหวาน",
+    howToObtain: "ดรอปจาก Lotus Wormhole (Lv.219) @ Swamp Dungeon 4 / 5",
+    usedIn: "ส่ง Lethos 5 อัน และ Little Chagan",
+  },
+  {
+    name: "Stoor Worm's Horn",
+    kind: "item",
+    description: "เขาของ Stoor Worm",
+    howToObtain: "ดรอปจาก Stoor Worm (Lv.221) @ Swamp Dungeon 5 / 6",
+    usedIn: "ส่ง Lethos 3 อัน",
+  },
+  {
+    name: "Feeler Eyes",
+    kind: "item",
+    description: "ดวงตาหนวดของ Slug G",
+    howToObtain: "ดรอปจาก Slug G (Lv.224) @ Swamp Dungeon 6",
+    usedIn: "ส่ง Lethos 3 อัน",
+  },
+  {
+    name: "White Hair",
+    kind: "item",
+    description: "เส้นผมสีขาว",
+    howToObtain: "ขุดที่ Swamp Dungeon",
+    usedIn: "ส่ง Poppuri 25 อัน",
+  },
+  {
+    name: "Moss Wing Moss",
+    kind: "item",
+    description: "มอสมีปีกเรืองแสง",
+    howToObtain: "ขุดที่ Swamp Dungeon",
+    usedIn: "ส่ง Poppuri 25 อัน",
+  },
+  {
+    name: "Mud",
+    kind: "item",
+    description: "โคลนเหนียวจากหนองน้ำ",
+    howToObtain: "ขุดที่ Swamp Dungeon",
+    usedIn: "ส่ง Swampy Suu 25 ก้อน",
+  },
+  {
+    name: "Flower of Revival",
+    kind: "item",
+    description: "ดอกไม้แห่งการฟื้นคืนชีพ",
+    howToObtain: "รางวัลจากเควส Pastor Tau (ส่งสติกเกอร์ 13 แผ่น)",
+    usedIn: "ส่ง Madam Sarah @ Carbigal Tea House",
+  },
+  {
+    name: "Lotus Flower",
+    kind: "item",
+    description: "ดอกบัวหอมหวาน",
+    howToObtain: "ดรอปจาก Lotus Wormhole (Lv.219) @ Swamp Dungeon 4 / 5",
+    usedIn: "ส่ง Madam Sarah @ Carbigal Tea House",
+  },
+  {
+    name: "Lotus Leaf",
+    kind: "item",
+    description: "ใบบัว",
+    howToObtain: "ดรอปจาก Chameleon Frog (Lv.169) และ Lotus Wormhole (Lv.219)",
+    usedIn: "ส่ง Madam Sarah 5 ใบ และ Little Chagan",
+  },
+  {
+    name: "Flower Tea",
+    kind: "potion",
+    description: "ชาดอกไม้หอม",
+    howToObtain: "รางวัลจากเควส Madam Sarah",
+    usedIn: "ส่ง Pastor Tau",
+  },
+  {
+    name: "Ginseng Root",
+    kind: "item",
+    description: "รากโสมจากเกาะ Caballa",
+    howToObtain: "ดรอปจาก Mandragora (Lv.53) @ Path to Caballa Relics / Relics Field 1 – Atlas",
+    usedIn: "ส่ง Little Chagan 5 อัน",
+  },
+  {
+    name: "Dream Note",
+    kind: "book",
+    description: "บันทึกความฝันประหลาด",
+    howToObtain: "รางวัลจากเควส Little Chagan",
+    usedIn: "ส่ง Fortune Teller @ Gate of Black Swamp",
+  },
+  {
+    name: "Crystal Marble",
+    kind: "item",
+    description: "ลูกแก้วคริสตัล",
+    howToObtain: "ดรอปจากมอนทั่วไปในเขต Gate of Black Swamp",
+    usedIn: "ส่ง Fortune Teller พร้อม Dream Note",
+  },
+  {
+    name: "Old Book",
+    kind: "book",
+    description: "หนังสือเก่าไม่ทราบที่มา",
+    howToObtain: "ดรอปจากมอนทั่วไปในเขต Gate of Black Swamp",
+    usedIn: "ส่ง Fortune Teller พร้อม Dream Note",
+  },
+  {
+    name: "Dream Interpretation",
+    kind: "book",
+    description: "คำทำนายความฝัน",
+    howToObtain: "รางวัลจากเควส Fortune Teller",
+    usedIn: "ส่ง Little Chagan พร้อมตรวจ Adventurer's Book — ปิด Swamp Field",
+  },
+  {
+    name: "Weapon Exchange Ticket G",
+    kind: "item",
+    description: "ตั๋วแลกอาวุธขั้นต้น LV 155",
+    howToObtain: "รางวัลปิดเขต Black Swamp",
+    usedIn:
+      "แลกกับ Mint @ Carbigal — Edge Talwar / Edge Bundi Dagger / Precise Blunderbuss / Sun Celestial Rod, หมวกใช้ Hat Exchange Ticket G อย่างละ 5 ใบ",
+  },
+];
+
 export const ep0Items = withEpisode("ep0")(ep0Defs);
 export const ep1Items = withEpisode("ep1")(ep1Defs);
 export const part1Items = withEpisode("part-1")(part1Defs);
@@ -5112,6 +5376,7 @@ export const ep3Items = withEpisode("ep3")(ep3Defs);
 export const ep5Items = withEpisode("ep5")(ep5Defs);
 export const ep6Items = withEpisode("ep6")(ep6Defs);
 export const part3Items = withEpisode("part-3")(part3Defs);
+export const part4Items = withEpisode("part-4")(part4Defs);
 export const ep4Items = withEpisode("ep4")(ep4Defs);
 export const allItems: GameItem[] = [
   ...ep0Items,
@@ -5124,4 +5389,5 @@ export const allItems: GameItem[] = [
   ...ep5Items,
   ...ep6Items,
   ...part3Items,
+  ...part4Items,
 ];
