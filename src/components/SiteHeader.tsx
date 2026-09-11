@@ -10,6 +10,7 @@ const epGuides = guidesInGroup("ep");
 const partGuides = guidesInGroup("part");
 
 const tailLinks = [
+  { href: "/summary", label: "สรุปของที่ต้องเก็บ" },
   { href: "/monsters", label: "มอนสเตอร์" },
   { href: "/items", label: "ไอเทม" },
 ];
