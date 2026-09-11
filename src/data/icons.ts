@@ -6,6 +6,7 @@
  */
 
 import { npcIconSizes, npcMapSizes } from "./npcIconSizes";
+import { iconFiles } from "./iconFiles";
 
 const ITEM_ICONS: Record<string, string> = {
   "baby carrot": "baby-carrot",
@@ -78,6 +79,8 @@ const ITEM_ICONS: Record<string, string> = {
   "restored necklace": "restored-necklace",
   "aquamarine pendant": "aquamarine-pendant",
   "unknown old document": "unknown-old-document",
+  // ไกด์ไทยเรียก Legendary Recipe ส่วนวิกิเรียก Unknown Old Document — ของชิ้นเดียวกัน
+  "legendary recipe": "unknown-old-document",
   "thick rope": "thick-rope",
   "piece of lumber": "piece-of-lumber",
   "weird piece 1": "weird-piece-1",
@@ -1097,15 +1100,35 @@ const THING_ENTRIES: Entry[] = [
 
 const NPC_ENTRIES = toEntries(NPC_ICONS, "npcs");
 
-/** หาไอคอนของไอเทม/มอนจากชื่อที่อาจมีคำอื่นพ่วงมา */
+/** ชื่อของ -> ชื่อไฟล์แบบ slug เช่น "Lotus Flower" -> "lotus-flower" */
+function toSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+/**
+ * หาไอคอนของไอเทม/มอนจากชื่อที่อาจมีคำอื่นพ่วงมา
+ *
+ * ลองตารางที่เขียนมือก่อน (รองรับชื่อที่ไม่ตรงกับไฟล์และการจับแบบบางส่วน)
+ * ถ้าไม่เจอค่อยเทียบชื่อไฟล์จริงในคลัง เพื่อไม่ให้ไอคอนที่มีไฟล์อยู่แล้วหายไปเพราะลืมเพิ่มคีย์
+ */
 export function findIcon(name: string): string | undefined {
   const needle = name.toLowerCase();
-  return THING_ENTRIES.find((e) => needle.includes(e.key))?.src;
+  const fromTable = THING_ENTRIES.find((e) => needle.includes(e.key))?.src;
+  if (fromTable) return fromTable;
+
+  const slug = toSlug(name);
+  if (iconFiles.items.has(slug)) return `/icons/items/${slug}.png`;
+  if (iconFiles.monsters.has(slug)) return `/icons/monsters/${slug}.png`;
+  return undefined;
 }
 
 export function monsterIcon(name: string): string | undefined {
-  const file = MONSTER_ICONS[name.toLowerCase()];
-  return file ? `/icons/monsters/${file}.png` : undefined;
+  const file = MONSTER_ICONS[name.toLowerCase()] ?? toSlug(name);
+  return iconFiles.monsters.has(file) ? `/icons/monsters/${file}.png` : undefined;
 }
 
 export interface NpcIcon {
